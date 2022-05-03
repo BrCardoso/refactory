@@ -1,0 +1,17 @@
+﻿using NotifierAppService.Models;
+
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace NotifierAppService.Repository.Interfaces
+{
+	public interface INotificationRepository
+	{
+		Task<IEnumerable<NotifierData>> FindAllNotificationsByAggregatorAsync(string aggregator, string hubGuid);
+
+		Task<Notifier> AddNotificationAsync(Notifier notifierData);
+
+		Task<Notifier> UpdateReadStatusAsync(Guid guid);
+	}
+}

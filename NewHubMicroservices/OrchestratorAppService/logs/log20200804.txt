@@ -1,0 +1,1065 @@
+2020-08-04 00:10:39.363 -03:00 [DBG] Checking configs...
+2020-08-04 00:10:39.386 -03:00 [INF] Request starting HTTP/2.0 POST https://localhost:44358/api/v1/Orchestrator/Customer/374f4ad4-d577-4f13-a20b-23c84c6a7990 application/json 10009
+2020-08-04 00:10:39.372 -03:00 [INF] The operation has timed out. ["s":"kv","i":"1b","c":"185ad57f81392d8c/613d239d38f957db","b":"DataBucket001","l":"192.168.0.34:54962","r":"191.233.233.54:11210","t":15000000]
+2020-08-04 00:10:45.011 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 00:10:45.014 -03:00 [INF] Executing endpoint 'NetCoreJobsMicroservice.Controler.OrchestratorController.PostAsync (OrchestratorAppService)'
+2020-08-04 00:10:45.015 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 00:10:45.015 -03:00 [INF] Route matched with {action = "Post", controller = "Orchestrator"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Object] PostAsync(System.Guid, Commons.Base.CustomerFull) on controller NetCoreJobsMicroservice.Controler.OrchestratorController (OrchestratorAppService).
+2020-08-04 00:10:46.257 -03:00 [DBG] Sending Set`1 with key 36e21fd7-03c7-440f-8bad-fc7314acc172 using server 191.233.233.54:11210
+2020-08-04 00:10:53.110 -03:00 [DBG] Sending SubDocDictUpsert`1 with key 36e21fd7-03c7-440f-8bad-fc7314acc172 using server 191.233.233.54:11210
+2020-08-04 00:10:53.118 -03:00 [WRN] Orphaned responses observed: [{"service":"kv","count":1,"top":[{"s":"kv","i":"1b","c":"185ad57f81392d8c/613d239d38f957db","b":"DataBucket001","l":"192.168.0.34:54962","r":"191.233.233.54:11210","t":15000000}]}]
+2020-08-04 00:10:53.129 -03:00 [DBG] Sending SubDocDictUpsert`1 with key 36e21fd7-03c7-440f-8bad-fc7314acc172 using server 191.233.233.54:11210
+2020-08-04 00:10:53.144 -03:00 [INF] Executing ObjectResult, writing value of type 'System.Guid'.
+2020-08-04 00:10:53.145 -03:00 [INF] Executed action NetCoreJobsMicroservice.Controler.OrchestratorController.PostAsync (OrchestratorAppService) in 8129.7475ms
+2020-08-04 00:10:53.147 -03:00 [INF] Executed endpoint 'NetCoreJobsMicroservice.Controler.OrchestratorController.PostAsync (OrchestratorAppService)'
+2020-08-04 00:10:53.147 -03:00 [INF] Request finished in 13761.8278ms 200 application/json; charset=utf-8
+2020-08-04 00:10:53.279 -03:00 [DBG] Sending SubDocDictUpsert`1 with key 682d474e-2708-450b-9a4f-9a5e6fe8c20f using server 191.233.233.54:11210
+2020-08-04 00:10:53.398 -03:00 [INF] Operations that exceeded service threshold: [{"service":"kv","count":2,"top":[{"operation_name":"SubArrayPushLast","last_operaion_id":"0x1a","last_local_address":"192.168.0.34:54960","last_remote_address":"191.233.233.54:11210","last_local_id":"185ad57f81392d8c/52b02d2e38aa3a24","last_dispatch_us":1578371,"total_us":1578963,"encode_us":115,"dispatch_us":1578371,"server_us":99,"decode_us":18},{"operation_name":"SubDocDictUpsert","last_operaion_id":"0x19","last_local_address":"192.168.0.34:54962","last_remote_address":"191.233.233.54:11210","last_local_id":"185ad57f81392d8c/613d239d38f957db","last_dispatch_us":811675,"total_us":1442026,"encode_us":232,"dispatch_us":811675,"server_us":91,"decode_us":165}]}]
+2020-08-04 00:10:53.446 -03:00 [WRN] Handling disconnect for connection "fe877cb6-5900-4204-8183-6a56fc10dce3": Couchbase.IO.SendTimeoutExpiredException: The operation has timed out. ["s":"kv","i":"1b","c":"185ad57f81392d8c/613d239d38f957db","b":"DataBucket001","l":"192.168.0.34:54962","r":"191.233.233.54:11210","t":15000000]
+   at System.Environment.get_StackTrace()
+   at Couchbase.IO.SendTimeoutExpiredException..ctor(String message)
+   at Couchbase.IO.ConnectionBase.CreateTimeoutException(UInt32 opaque)
+   at Couchbase.IO.MultiplexingConnection.Send(Byte[] request)
+   at Couchbase.IO.Services.PooledIOService.Execute[T](IOperation`1 operation)
+   at Couchbase.Core.Server.Send[T](IOperation`1 operation)
+   at Couchbase.Core.Buckets.CouchbaseRequestExecuter.SendWithRetry[T](IOperation`1 operation)
+   at Couchbase.CouchbaseBucket.Invoke[T](IMutateInBuilder`1 builder)
+   at Couchbase.Core.MutateInBuilder`1.Execute()
+   at NetCoreJobsMicroservice.operations.UpsertLog(Guid token, Guid hubguid, String status, List`1 lt, IBucket _bucket, ILogger`1 _logger) in C:\Projetos\HubMicroservices\NewHubMicroservices\OrchestratorAppService\operations.cs:line 1080
+   at NetCoreJobsMicroservice.operations.<>c__DisplayClass0_1.<HandleFileAsync>b__12() in C:\Projetos\HubMicroservices\NewHubMicroservices\OrchestratorAppService\operations.cs:line 375
+   at System.Threading.Tasks.Task.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+   at System.Threading.Tasks.Task.ExecuteEntryUnsafe(Thread threadPoolThread)
+   at System.Threading.Tasks.Task.ExecuteFromThreadPool(Thread threadPoolThread)
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading._ThreadPoolWaitCallback.PerformWaitCallback()
+2020-08-04 00:10:53.449 -03:00 [INF] Closing connection "fe877cb6-5900-4204-8183-6a56fc10dce3"
+2020-08-04 00:10:53.452 -03:00 [DBG] Sending SubDocDictUpsert`1 with key 36e21fd7-03c7-440f-8bad-fc7314acc172 using server 191.233.233.54:11210
+2020-08-04 00:10:53.454 -03:00 [DBG] Sending SubDocDictUpsert`1 with key 36e21fd7-03c7-440f-8bad-fc7314acc172 using server 191.233.233.54:11210
+2020-08-04 00:10:53.459 -03:00 [DBG] Sending SubDocDictUpsert`1 with key 36e21fd7-03c7-440f-8bad-fc7314acc172 using server 191.233.233.54:11210
+2020-08-04 00:10:53.460 -03:00 [INF] Checking if node 191.233.233.54:11210 should be down - last: "23:40:11.2329605", current: "00:10:53.4604486", count: 1
+2020-08-04 00:10:55.722 -03:00 [DBG] Operation doesn't support retries for key 36e21fd7-03c7-440f-8bad-fc7314acc172
+2020-08-04 00:10:55.722 -03:00 [DBG] Operation for key 36e21fd7-03c7-440f-8bad-fc7314acc172 failed after 1 retries using vb194 from rev39 and opaque31. Reason: Status code: None [-1]
+2020-08-04 00:10:55.723 -03:00 [INF] Operation: "36e21fd7-03c7-440f-8bad-fc7314acc172" - Status: Em processamento - Title: Inicio da leitura do objeto - Message: null
+2020-08-04 00:10:55.723 -03:00 [DBG] Sending SubArrayPushLast`1 with key 36e21fd7-03c7-440f-8bad-fc7314acc172 using server 191.233.233.54:11210
+2020-08-04 00:10:55.724 -03:00 [INF] Checking if node 191.233.233.54:11210 should be down - last: "23:40:11.2329605", current: "00:10:55.7246124", count: 2
+2020-08-04 00:10:55.724 -03:00 [DBG] Operation doesn't support retries for key 682d474e-2708-450b-9a4f-9a5e6fe8c20f
+2020-08-04 00:10:55.724 -03:00 [DBG] Operation for key 682d474e-2708-450b-9a4f-9a5e6fe8c20f failed after 1 retries using vb561 from rev39 and opaque27. Reason: Status code: None [-1]
+2020-08-04 00:10:55.725 -03:00 [INF] Operation: "682d474e-2708-450b-9a4f-9a5e6fe8c20f" - Status: Em processamento - Title: Nenhum provedor listado - Message: CNPJ:38202338000107
+2020-08-04 00:10:55.725 -03:00 [DBG] Trying to acquire new connection! Refs=1
+2020-08-04 00:10:55.725 -03:00 [DBG] Sending SubArrayPushLast`1 with key 682d474e-2708-450b-9a4f-9a5e6fe8c20f using server 191.233.233.54:11210
+2020-08-04 00:10:55.724 -03:00 [DBG] 
+System.ObjectDisposedException: Safe handle has been closed.
+Object name: 'SafeHandle'.
+   at System.Runtime.InteropServices.SafeHandle.DangerousAddRef(Boolean& success)
+   at System.StubHelpers.StubHelpers.SafeHandleAddRef(SafeHandle pHandle, Boolean& success)
+   at Interop.Kernel32.SetEvent(SafeWaitHandle handle)
+   at System.Threading.EventWaitHandle.Reset()
+   at Couchbase.IO.MultiplexingConnection.Send(Byte[] request)
+   at Couchbase.IO.Services.PooledIOService.Execute[T](IOperation`1 operation)
+2020-08-04 00:10:55.752 -03:00 [DBG] Authenticating socket "eb5ce656-fd57-44e1-8834-b53979f25816"
+2020-08-04 00:10:55.787 -03:00 [DBG] Authenticated socket "eb5ce656-fd57-44e1-8834-b53979f25816" succeeded: null
+2020-08-04 00:10:55.787 -03:00 [INF] 4. Authenticated applicationNetCore using Couchbase.Authentication.SASL.PlainTextMechanism - "176c5ea8-eeff-4e4c-a237-23066c06a6d1" - "eb5ce656-fd57-44e1-8834-b53979f25816" [191.233.233.54:11210].
+2020-08-04 00:10:55.805 -03:00 [DBG] Acquire new: "eb5ce656-fd57-44e1-8834-b53979f25816" | 191.233.233.54:11210 | [1, 2] - "6e8c6886-7293-4a70-9524-a749b1b3f5a6" - Disposed: false
+2020-08-04 00:10:55.805 -03:00 [DBG] Trying to acquire new connection! Refs=2
+2020-08-04 00:10:55.851 -03:00 [DBG] Authenticating socket "6acef824-f7f1-471c-a244-2ef4610706c5"
+2020-08-04 00:10:55.882 -03:00 [DBG] Authenticated socket "6acef824-f7f1-471c-a244-2ef4610706c5" succeeded: null
+2020-08-04 00:10:55.882 -03:00 [INF] 4. Authenticated applicationNetCore using Couchbase.Authentication.SASL.PlainTextMechanism - "176c5ea8-eeff-4e4c-a237-23066c06a6d1" - "6acef824-f7f1-471c-a244-2ef4610706c5" [191.233.233.54:11210].
+2020-08-04 00:10:55.903 -03:00 [DBG] Acquire new: "6acef824-f7f1-471c-a244-2ef4610706c5" | 191.233.233.54:11210 | [2, 2] - "6e8c6886-7293-4a70-9524-a749b1b3f5a6" - Disposed: false
+2020-08-04 00:10:55.903 -03:00 [INF] Checking if node 191.233.233.54:11210 should be down - last: "23:40:11.2329605", current: "00:10:55.9037590", count: 3
+2020-08-04 00:10:55.904 -03:00 [DBG] Operation doesn't support retries for key 36e21fd7-03c7-440f-8bad-fc7314acc172
+2020-08-04 00:10:55.904 -03:00 [DBG] Operation for key 36e21fd7-03c7-440f-8bad-fc7314acc172 failed after 1 retries using vb194 from rev39 and opaque29. Reason: Safe handle has been closed.
+Object name: 'SafeHandle'.
+2020-08-04 00:11:01.874 -03:00 [INF] The operation has timed out. ["s":"kv","i":"1c","c":"185ad57f81392d8c/52b02d2e38aa3a24","b":"DataBucket001","l":"192.168.0.34:54960","r":"191.233.233.54:11210","t":15000000]
+2020-08-04 00:11:01.879 -03:00 [WRN] Handling disconnect for connection "f629bfad-5590-43b3-8470-e212e3756536": Couchbase.IO.SendTimeoutExpiredException: The operation has timed out. ["s":"kv","i":"1c","c":"185ad57f81392d8c/52b02d2e38aa3a24","b":"DataBucket001","l":"192.168.0.34:54960","r":"191.233.233.54:11210","t":15000000]
+   at System.Environment.get_StackTrace()
+   at Couchbase.IO.SendTimeoutExpiredException..ctor(String message)
+   at Couchbase.IO.ConnectionBase.CreateTimeoutException(UInt32 opaque)
+   at Couchbase.IO.MultiplexingConnection.Send(Byte[] request)
+   at Couchbase.IO.Services.PooledIOService.Execute[T](IOperation`1 operation)
+   at Couchbase.Core.Server.Send[T](IOperation`1 operation)
+   at Couchbase.Configuration.Server.Monitoring.ConfigMonitor.<StartMonitoring>b__12_0()
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.ExecutionContextCallback(Object s)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext()
+   at System.Runtime.CompilerServices.TaskAwaiter.<>c.<OutputWaitEtwEvents>b__12_0(Action innerContinuation, Task innerTask)
+   at System.Threading.Tasks.AwaitTaskContinuation.RunOrScheduleAction(Action action, Boolean allowInlining)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Threading.Tasks.Task.TrySetResult()
+   at System.Threading.Tasks.Task.DelayPromise.CompleteTimedOut()
+   at System.Threading.TimerQueueTimer.CallCallback(Boolean isThreadPool)
+   at System.Threading.TimerQueueTimer.Fire(Boolean isThreadPool)
+   at System.Threading.TimerQueueTimer.System.Threading.IThreadPoolWorkItem.Execute()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading._ThreadPoolWaitCallback.PerformWaitCallback()
+2020-08-04 00:11:01.880 -03:00 [INF] Closing connection "f629bfad-5590-43b3-8470-e212e3756536"
+2020-08-04 00:11:01.881 -03:00 [INF] Checking if node 191.233.233.54:11210 should be down - last: "23:40:11.2329605", current: "00:11:01.8810655", count: 4
+2020-08-04 00:11:01.883 -03:00 [DBG] Operation doesn't support retries for key 682d474e-2708-450b-9a4f-9a5e6fe8c20f
+2020-08-04 00:11:01.883 -03:00 [DBG] Operation for key 682d474e-2708-450b-9a4f-9a5e6fe8c20f failed after 1 retries using vb561 from rev39 and opaque32. Reason: Status code: None [-1]
+2020-08-04 00:11:01.883 -03:00 [INF] Operation: "682d474e-2708-450b-9a4f-9a5e6fe8c20f" - Status: Finalizado com erro - Title: Fim do processamento - Message: System.NullReferenceException: Object reference not set to an instance of an object.
+   at NetCoreJobsMicroservice.operations.<>c.<HandleFileAsync>b__0_28(Beneficiary x) in C:\Projetos\HubMicroservices\NewHubMicroservices\OrchestratorAppService\operations.cs:line 398
+   at System.Linq.Enumerable.WhereListIterator`1.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at NetCoreJobsMicroservice.operations.HandleFileAsync(CustomerFull customerFull, IConfiguration config, Guid eventToken, ILogger`1 _logger, IBucket _bucket, String authorization) in C:\Projetos\HubMicroservices\NewHubMicroservices\OrchestratorAppService\operations.cs:line 398
+2020-08-04 00:11:01.884 -03:00 [DBG] Sending SubArrayPushLast`1 with key 682d474e-2708-450b-9a4f-9a5e6fe8c20f using server 191.233.233.54:11210
+2020-08-04 00:11:01.885 -03:00 [INF] Checking if node 191.233.233.54:11210 should be down - last: "23:40:11.2329605", current: "00:11:01.8848698", count: 5
+2020-08-04 00:11:01.885 -03:00 [DBG] Operation doesn't support retries for key 36e21fd7-03c7-440f-8bad-fc7314acc172
+2020-08-04 00:11:01.886 -03:00 [DBG] Operation for key 36e21fd7-03c7-440f-8bad-fc7314acc172 failed after 1 retries using vb194 from rev39 and opaque36. Reason: Status code: None [-1]
+2020-08-04 00:11:01.887 -03:00 [DBG] Sending SubDocDictUpsert`1 with key 36e21fd7-03c7-440f-8bad-fc7314acc172 using server 191.233.233.54:11210
+2020-08-04 00:11:01.896 -03:00 [INF] Checking if node 191.233.233.54:11210 should be down - last: "23:40:11.2329605", current: "00:11:01.8947106", count: 6
+2020-08-04 00:11:01.896 -03:00 [DBG] 
+System.ObjectDisposedException: Safe handle has been closed.
+Object name: 'SafeHandle'.
+   at System.Runtime.InteropServices.SafeHandle.DangerousAddRef(Boolean& success)
+   at System.StubHelpers.StubHelpers.SafeHandleAddRef(SafeHandle pHandle, Boolean& success)
+   at Interop.Kernel32.SetEvent(SafeWaitHandle handle)
+   at System.Threading.EventWaitHandle.Reset()
+   at Couchbase.IO.MultiplexingConnection.Send(Byte[] request)
+   at Couchbase.IO.Services.PooledIOService.Execute[T](IOperation`1 operation)
+2020-08-04 00:11:01.897 -03:00 [DBG] Operation doesn't support retries for key 682d474e-2708-450b-9a4f-9a5e6fe8c20f
+2020-08-04 00:11:01.897 -03:00 [INF] Checking if node 191.233.233.54:11210 should be down - last: "23:40:11.2329605", current: "00:11:01.8971616", count: 7
+2020-08-04 00:11:01.897 -03:00 [DBG] Operation doesn't support retries for key 36e21fd7-03c7-440f-8bad-fc7314acc172
+2020-08-04 00:11:01.897 -03:00 [DBG] Operation for key 682d474e-2708-450b-9a4f-9a5e6fe8c20f failed after 1 retries using vb561 from rev39 and opaque37. Reason: Status code: None [-1]
+2020-08-04 00:11:01.897 -03:00 [DBG] Operation for key 36e21fd7-03c7-440f-8bad-fc7314acc172 failed after 1 retries using vb194 from rev39 and opaque34. Reason: Safe handle has been closed.
+Object name: 'SafeHandle'.
+2020-08-04 00:11:01.898 -03:00 [INF] Operation: "36e21fd7-03c7-440f-8bad-fc7314acc172" - Status: Em processamento - Title: Contrato ativo - Message: null
+2020-08-04 00:11:01.898 -03:00 [DBG] Sending SubArrayPushLast`1 with key 36e21fd7-03c7-440f-8bad-fc7314acc172 using server 191.233.233.54:11210
+2020-08-04 00:11:02.717 -03:00 [INF] Checking if node 191.233.233.54:11210 should be down - last: "23:40:11.2329605", current: "00:11:02.6992210", count: 8
+2020-08-04 00:11:02.717 -03:00 [DBG] Waiting to check configs...
+2020-08-04 00:11:02.717 -03:00 [DBG] 
+System.ObjectDisposedException: Safe handle has been closed.
+Object name: 'SafeHandle'.
+   at System.Runtime.InteropServices.SafeHandle.DangerousAddRef(Boolean& success)
+   at System.StubHelpers.StubHelpers.SafeHandleAddRef(SafeHandle pHandle, Boolean& success)
+   at Interop.Kernel32.SetEvent(SafeWaitHandle handle)
+   at System.Threading.EventWaitHandle.Reset()
+   at Couchbase.IO.MultiplexingConnection.Send(Byte[] request)
+   at Couchbase.IO.Services.PooledIOService.Execute[T](IOperation`1 operation)
+2020-08-04 00:11:02.718 -03:00 [INF] Checking if node 191.233.233.54:11210 should be down - last: "23:40:11.2329605", current: "00:11:02.7179674", count: 9
+2020-08-04 00:11:02.718 -03:00 [DBG] Operation doesn't support retries for key 36e21fd7-03c7-440f-8bad-fc7314acc172
+2020-08-04 00:11:02.718 -03:00 [DBG] Operation for key 36e21fd7-03c7-440f-8bad-fc7314acc172 failed after 1 retries using vb194 from rev39 and opaque30. Reason: Safe handle has been closed.
+Object name: 'SafeHandle'.
+2020-08-04 00:11:02.718 -03:00 [INF] Operation: "36e21fd7-03c7-440f-8bad-fc7314acc172" - Status: Em andamento - Title: Objeto válido - Message: Objeto do body válido
+2020-08-04 00:11:02.718 -03:00 [DBG] Sending SubArrayPushLast`1 with key 36e21fd7-03c7-440f-8bad-fc7314acc172 using server 191.233.233.54:11210
+2020-08-04 00:11:02.723 -03:00 [INF] SupportsEnhancedDurability=false
+2020-08-04 00:11:02.723 -03:00 [INF] SupportsSubdocXAttributes=true
+2020-08-04 00:11:02.723 -03:00 [INF] SupportsEnhancedAuthentication=true
+2020-08-04 00:11:02.723 -03:00 [INF] SupportsKvErrorMap=true
+2020-08-04 00:11:02.723 -03:00 [INF] SupportsServerDuration=true
+2020-08-04 00:11:03.891 -03:00 [INF] SupportsEnhancedDurability=false
+2020-08-04 00:11:03.892 -03:00 [INF] SupportsSubdocXAttributes=true
+2020-08-04 00:11:03.892 -03:00 [INF] SupportsEnhancedAuthentication=true
+2020-08-04 00:11:03.892 -03:00 [INF] SupportsKvErrorMap=true
+2020-08-04 00:11:03.892 -03:00 [INF] SupportsServerDuration=true
+2020-08-04 00:11:03.893 -03:00 [DBG] Operation SubArrayPushLast`1 succeeded 1 for key 682d474e-2708-450b-9a4f-9a5e6fe8c20f : null
+2020-08-04 00:11:05.105 -03:00 [DBG] Sending SubDocDictUpsert`1 with key 36e21fd7-03c7-440f-8bad-fc7314acc172 using server 191.233.233.54:11210
+2020-08-04 00:11:18.378 -03:00 [DBG] Checking configs...
+2020-08-04 00:11:18.378 -03:00 [INF] The operation has timed out. ["s":"kv","i":"23","c":"185ad57f81392d8c/613d239d38f957db","b":"DataBucket001","l":"192.168.0.34:54962","r":"191.233.233.54:11210","t":15000000]
+2020-08-04 00:11:18.379 -03:00 [INF] SupportsEnhancedDurability=false
+2020-08-04 00:11:18.379 -03:00 [DBG] Operation doesn't support retries for key 36e21fd7-03c7-440f-8bad-fc7314acc172
+2020-08-04 00:11:18.379 -03:00 [DBG] Operation doesn't support retries for key 36e21fd7-03c7-440f-8bad-fc7314acc172
+2020-08-04 00:11:18.379 -03:00 [INF] SupportsSubdocXAttributes=true
+2020-08-04 00:11:18.379 -03:00 [DBG] Operation for key 36e21fd7-03c7-440f-8bad-fc7314acc172 failed after 1 retries using vb194 from rev39 and opaque48. Reason: KV Error: {Name="KEY_ENOENT", Description="Not Found", Attributes="item-only"}
+2020-08-04 00:11:18.379 -03:00 [DBG] Operation for key 36e21fd7-03c7-440f-8bad-fc7314acc172 failed after 1 retries using vb194 from rev39 and opaque44. Reason: KV Error: {Name="KEY_ENOENT", Description="Not Found", Attributes="item-only"}
+2020-08-04 00:11:18.379 -03:00 [INF] SupportsEnhancedAuthentication=true
+2020-08-04 00:11:18.380 -03:00 [INF] SupportsKvErrorMap=true
+2020-08-04 00:11:18.380 -03:00 [INF] Operation: "36e21fd7-03c7-440f-8bad-fc7314acc172" - Status: Em processamento - Title: Nenhum provedor listado - Message: CNPJ:38202338000107
+2020-08-04 00:11:18.380 -03:00 [INF] SupportsServerDuration=true
+2020-08-04 00:11:18.380 -03:00 [DBG] Sending SubArrayPushLast`1 with key 36e21fd7-03c7-440f-8bad-fc7314acc172 using server 191.233.233.54:11210
+2020-08-04 00:11:18.381 -03:00 [INF] The operation has timed out. ["s":"kv","i":"21","c":"185ad57f81392d8c/613d239d38f957db","b":"DataBucket001","l":"192.168.0.34:54962","r":"191.233.233.54:11210","t":15000000]
+2020-08-04 00:11:18.384 -03:00 [WRN] Handling disconnect for connection "fe877cb6-5900-4204-8183-6a56fc10dce3": Couchbase.IO.SendTimeoutExpiredException: The operation has timed out. ["s":"kv","i":"21","c":"185ad57f81392d8c/613d239d38f957db","b":"DataBucket001","l":"192.168.0.34:54962","r":"191.233.233.54:11210","t":15000000]
+   at System.Environment.get_StackTrace()
+   at Couchbase.IO.SendTimeoutExpiredException..ctor(String message)
+   at Couchbase.IO.ConnectionBase.CreateTimeoutException(UInt32 opaque)
+   at Couchbase.IO.MultiplexingConnection.Send(Byte[] request)
+   at Couchbase.IO.Services.PooledIOService.Execute[T](IOperation`1 operation)
+   at Couchbase.Core.Server.Send[T](IOperation`1 operation)
+   at Couchbase.Core.Buckets.CouchbaseRequestExecuter.SendWithRetry[T](IOperation`1 operation)
+   at Couchbase.CouchbaseBucket.Invoke[T](IMutateInBuilder`1 builder)
+   at Couchbase.Core.MutateInBuilder`1.Execute()
+   at NetCoreJobsMicroservice.operations.UpsertLog(Guid token, Guid hubguid, String status, List`1 lt, IBucket _bucket, ILogger`1 _logger) in C:\Projetos\HubMicroservices\NewHubMicroservices\OrchestratorAppService\operations.cs:line 1080
+   at NetCoreJobsMicroservice.operations.<>c__DisplayClass0_0.<HandleFileAsync>b__2() in C:\Projetos\HubMicroservices\NewHubMicroservices\OrchestratorAppService\operations.cs:line 45
+   at System.Threading.Tasks.Task.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+   at System.Threading.Tasks.Task.ExecuteEntryUnsafe(Thread threadPoolThread)
+   at System.Threading.Tasks.Task.ExecuteFromThreadPool(Thread threadPoolThread)
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading._ThreadPoolWaitCallback.PerformWaitCallback()
+2020-08-04 00:11:18.385 -03:00 [INF] Checking if node 191.233.233.54:11210 should be down - last: "23:40:11.2329605", current: "00:11:18.3849659", count: 10
+2020-08-04 00:11:18.385 -03:00 [DBG] Operation doesn't support retries for key 36e21fd7-03c7-440f-8bad-fc7314acc172
+2020-08-04 00:11:18.385 -03:00 [DBG] Operation for key 36e21fd7-03c7-440f-8bad-fc7314acc172 failed after 1 retries using vb194 from rev39 and opaque33. Reason: Status code: None [-1]
+2020-08-04 00:11:18.386 -03:00 [INF] Operation: "36e21fd7-03c7-440f-8bad-fc7314acc172" - Status: Em processamento - Title: Contrato localizado - Message: null
+2020-08-04 00:11:18.388 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 00:11:18.388 -03:00 [WRN] Handling disconnect for connection "fe877cb6-5900-4204-8183-6a56fc10dce3": Couchbase.IO.SendTimeoutExpiredException: The operation has timed out. ["s":"kv","i":"23","c":"185ad57f81392d8c/613d239d38f957db","b":"DataBucket001","l":"192.168.0.34:54962","r":"191.233.233.54:11210","t":15000000]
+   at System.Environment.get_StackTrace()
+   at Couchbase.IO.SendTimeoutExpiredException..ctor(String message)
+   at Couchbase.IO.ConnectionBase.CreateTimeoutException(UInt32 opaque)
+   at Couchbase.IO.MultiplexingConnection.Send(Byte[] request)
+   at Couchbase.IO.Services.PooledIOService.Execute[T](IOperation`1 operation)
+   at Couchbase.Core.Server.Send[T](IOperation`1 operation)
+   at Couchbase.Core.Buckets.CouchbaseRequestExecuter.SendWithRetry[T](IOperation`1 operation)
+   at Couchbase.CouchbaseBucket.Invoke[T](IMutateInBuilder`1 builder)
+   at Couchbase.Core.MutateInBuilder`1.Execute()
+   at NetCoreJobsMicroservice.operations.UpsertLog(Guid token, Guid hubguid, String status, List`1 lt, IBucket _bucket, ILogger`1 _logger) in C:\Projetos\HubMicroservices\NewHubMicroservices\OrchestratorAppService\operations.cs:line 1080
+   at NetCoreJobsMicroservice.operations.<>c__DisplayClass0_1.<HandleFileAsync>b__4() in C:\Projetos\HubMicroservices\NewHubMicroservices\OrchestratorAppService\operations.cs:line 82
+   at System.Threading.Tasks.Task.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+   at System.Threading.Tasks.Task.ExecuteEntryUnsafe(Thread threadPoolThread)
+   at System.Threading.Tasks.Task.ExecuteFromThreadPool(Thread threadPoolThread)
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading._ThreadPoolWaitCallback.PerformWaitCallback()
+2020-08-04 00:11:18.388 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 00:11:18.430 -03:00 [DBG] Operation doesn't support retries for key 36e21fd7-03c7-440f-8bad-fc7314acc172
+2020-08-04 00:11:18.431 -03:00 [DBG] Operation for key 36e21fd7-03c7-440f-8bad-fc7314acc172 failed after 1 retries using vb194 from rev39 and opaque49. Reason: KV Error: {Name="KEY_ENOENT", Description="Not Found", Attributes="item-only"}
+2020-08-04 00:11:18.388 -03:00 [DBG] Sending SubArrayPushLast`1 with key 36e21fd7-03c7-440f-8bad-fc7314acc172 using server 191.233.233.54:11210
+2020-08-04 00:11:18.430 -03:00 [INF] Checking if node 191.233.233.54:11210 should be down - last: "23:40:11.2329605", current: "00:11:18.4304796", count: 11
+2020-08-04 00:11:18.436 -03:00 [INF] Marking node 191.233.233.54:11210 as down - last: "23:40:11.2329605", current: "00:11:18.4304796", count: 11
+2020-08-04 00:11:18.437 -03:00 [DBG] Operation doesn't support retries for key 36e21fd7-03c7-440f-8bad-fc7314acc172
+2020-08-04 00:11:18.437 -03:00 [DBG] Operation for key 36e21fd7-03c7-440f-8bad-fc7314acc172 failed after 1 retries using vb194 from rev39 and opaque35. Reason: Status code: None [-1]
+2020-08-04 00:11:18.437 -03:00 [INF] Operation: "36e21fd7-03c7-440f-8bad-fc7314acc172" - Status: Em processamento - Title: Inicio empresa - Message: CNPJ:38202338000107
+2020-08-04 00:11:18.469 -03:00 [DBG] Operation doesn't support retries for key 36e21fd7-03c7-440f-8bad-fc7314acc172
+2020-08-04 00:11:18.469 -03:00 [DBG] Operation for key 36e21fd7-03c7-440f-8bad-fc7314acc172 failed after 1 retries using vb194 from rev39 and opaque45. Reason: KV Error: {Name="KEY_ENOENT", Description="Not Found", Attributes="item-only"}
+2020-08-04 00:11:18.470 -03:00 [INF] SupportsEnhancedDurability=false
+2020-08-04 00:11:18.470 -03:00 [DBG] Operation doesn't support retries for key 36e21fd7-03c7-440f-8bad-fc7314acc172
+2020-08-04 00:11:18.470 -03:00 [INF] SupportsSubdocXAttributes=true
+2020-08-04 00:11:18.471 -03:00 [DBG] Operation for key 36e21fd7-03c7-440f-8bad-fc7314acc172 failed after 1 retries using vb194 from rev39 and opaque51. Reason: KV Error: {Name="KEY_ENOENT", Description="Not Found", Attributes="item-only"}
+2020-08-04 00:11:18.471 -03:00 [INF] SupportsEnhancedAuthentication=true
+2020-08-04 00:11:18.471 -03:00 [INF] SupportsKvErrorMap=true
+2020-08-04 00:11:18.471 -03:00 [INF] SupportsServerDuration=true
+2020-08-04 00:11:18.518 -03:00 [DBG] Checking config with revision #39
+2020-08-04 00:11:18.518 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 00:11:18.518 -03:00 [DBG] Waiting to check configs...
+2020-08-04 00:11:18.519 -03:00 [DBG] Processing config rev#39
+2020-08-04 00:11:18.521 -03:00 [DBG] Operation doesn't support retries for key 36e21fd7-03c7-440f-8bad-fc7314acc172
+2020-08-04 00:11:18.521 -03:00 [DBG] Operation for key 36e21fd7-03c7-440f-8bad-fc7314acc172 failed after 1 retries using vb194 from rev39 and opaque53. Reason: The node 191.233.233.54:11210 that the key was mapped to is either down or unreachable. The SDK will continue to try to connect every 1000ms. Until it can connect every operation routed to it will fail with this exception.
+2020-08-04 00:11:18.522 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 15
+2020-08-04 00:11:18.523 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 00:11:18.523 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 00:11:19.882 -03:00 [DBG] Operation doesn't support retries for key 36e21fd7-03c7-440f-8bad-fc7314acc172
+2020-08-04 00:11:19.882 -03:00 [DBG] Operation for key 36e21fd7-03c7-440f-8bad-fc7314acc172 failed after 1 retries using vb194 from rev39 and opaque43. Reason: KV Error: {Name="KEY_ENOENT", Description="Not Found", Attributes="item-only"}
+2020-08-04 00:11:19.882 -03:00 [INF] Operation: "36e21fd7-03c7-440f-8bad-fc7314acc172" - Status: Em processamento - Title: Empresa incluida/atualizada - Message: CNPJ:38202338000107
+2020-08-04 00:11:19.884 -03:00 [DBG] Operation doesn't support retries for key 36e21fd7-03c7-440f-8bad-fc7314acc172
+2020-08-04 00:11:19.884 -03:00 [DBG] Operation for key 36e21fd7-03c7-440f-8bad-fc7314acc172 failed after 1 retries using vb194 from rev39 and opaque55. Reason: The node 191.233.233.54:11210 that the key was mapped to is either down or unreachable. The SDK will continue to try to connect every 1000ms. Until it can connect every operation routed to it will fail with this exception.
+2020-08-04 00:11:19.931 -03:00 [INF] Checking if node 191.233.233.54:11210 is down: true
+2020-08-04 00:11:19.957 -03:00 [INF] Successfully connected and marking data node 191.233.233.54:11210 as up.
+2020-08-04 00:11:20.225 -03:00 [INF] Operations that exceeded service threshold: [{"service":"kv","count":15,"top":[{"operation_name":"SubArrayPushLast","last_operaion_id":"0x2a","last_local_address":"192.168.0.34:55440","last_remote_address":"191.233.233.54:11210","last_local_id":"185ad57f81392d8c/bb5b0b6adda00836","last_dispatch_us":564954,"total_us":2009996,"encode_us":1230,"dispatch_us":564954,"server_us":108,"decode_us":56},{"operation_name":"SubDocDictUpsert","last_operaion_id":"0x2b","last_local_address":"192.168.0.34:55440","last_remote_address":"191.233.233.54:11210","last_local_id":"185ad57f81392d8c/bb5b0b6adda00836","last_dispatch_us":1365835,"total_us":17995039,"encode_us":58,"dispatch_us":1365835,"server_us":27,"decode_us":182},{"operation_name":"SubArrayPushLast","last_operaion_id":"0x2c","last_local_address":"192.168.0.34:55442","last_remote_address":"191.233.233.54:11210","last_local_id":"185ad57f81392d8c/0c420a5e186d9b78","last_dispatch_us":13274405,"total_us":16481151,"encode_us":279,"dispatch_us":13274405,"server_us":22,"decode_us":222},{"operation_name":"SubArrayPushLast","last_operaion_id":"0x2d","last_local_address":"192.168.0.34:55440","last_remote_address":"191.233.233.54:11210","last_local_id":"185ad57f81392d8c/bb5b0b6adda00836","last_dispatch_us":37283,"total_us":15751427,"encode_us":84,"dispatch_us":37283,"server_us":14,"decode_us":96},{"operation_name":"SubDocDictUpsert","last_operaion_id":"0x30","last_local_address":"192.168.0.34:55442","last_remote_address":"191.233.233.54:11210","last_local_id":"185ad57f81392d8c/0c420a5e186d9b78","last_dispatch_us":13273942,"total_us":13275015,"encode_us":37,"dispatch_us":13273942,"server_us":11,"decode_us":70},{"operation_name":"SubDocDictUpsert","last_operaion_id":"0x1f","last_local_address":"192.168.0.34:54962","last_remote_address":"191.233.233.54:11210","last_local_id":"185ad57f81392d8c/613d239d38f957db","last_dispatch_us":327462,"total_us":2593671,"encode_us":55,"dispatch_us":327462,"decode_us":431}]}]
+2020-08-04 00:11:21.032 -03:00 [DBG] Checking configs...
+2020-08-04 00:11:21.033 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 00:11:21.033 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 00:11:21.063 -03:00 [DBG] Checking config with revision #39
+2020-08-04 00:11:21.063 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 00:11:21.063 -03:00 [DBG] Waiting to check configs...
+2020-08-04 00:11:21.064 -03:00 [DBG] Processing config rev#39
+2020-08-04 00:11:21.066 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 15
+2020-08-04 00:11:21.066 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 00:11:21.066 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 00:11:25.198 -03:00 [DBG] Checking configs...
+2020-08-04 00:11:25.199 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 00:11:25.200 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 00:11:31.200 -03:00 [DBG] Checking config with revision #39
+2020-08-04 00:11:31.200 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 00:11:31.200 -03:00 [DBG] Waiting to check configs...
+2020-08-04 00:11:31.200 -03:00 [DBG] Processing config rev#39
+2020-08-04 00:11:31.235 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 15
+2020-08-04 00:11:31.236 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 00:11:31.236 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 00:11:31.239 -03:00 [DBG] Sending SubDocDictUpsert`1 with key 36e21fd7-03c7-440f-8bad-fc7314acc172 using server 191.233.233.54:11210
+2020-08-04 00:11:32.320 -03:00 [DBG] Operation doesn't support retries for key 36e21fd7-03c7-440f-8bad-fc7314acc172
+2020-08-04 00:11:32.320 -03:00 [DBG] Operation for key 36e21fd7-03c7-440f-8bad-fc7314acc172 failed after 1 retries using vb194 from rev39 and opaque59. Reason: KV Error: {Name="KEY_ENOENT", Description="Not Found", Attributes="item-only"}
+2020-08-04 00:11:32.321 -03:00 [INF] Operation: "36e21fd7-03c7-440f-8bad-fc7314acc172" - Status: Em processamento - Title: Dados do funcionario atualizados - Message: CNPJ empresa: 38202338000107 CPF pessoa:28581084044
+2020-08-04 00:11:32.321 -03:00 [DBG] Sending SubArrayPushLast`1 with key 36e21fd7-03c7-440f-8bad-fc7314acc172 using server 191.233.233.54:11210
+2020-08-04 00:11:33.040 -03:00 [DBG] Operation doesn't support retries for key 36e21fd7-03c7-440f-8bad-fc7314acc172
+2020-08-04 00:11:33.040 -03:00 [DBG] Operation for key 36e21fd7-03c7-440f-8bad-fc7314acc172 failed after 1 retries using vb194 from rev39 and opaque60. Reason: KV Error: {Name="KEY_ENOENT", Description="Not Found", Attributes="item-only"}
+2020-08-04 00:11:34.013 -03:00 [DBG] Checking configs...
+2020-08-04 00:11:34.013 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 00:11:34.016 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 00:11:35.742 -03:00 [DBG] Checking config with revision #39
+2020-08-04 00:11:35.742 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 00:11:35.743 -03:00 [DBG] Waiting to check configs...
+2020-08-04 00:11:35.743 -03:00 [DBG] Processing config rev#39
+2020-08-04 00:11:35.746 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 15
+2020-08-04 00:11:35.746 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 00:11:35.746 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 00:11:38.618 -03:00 [DBG] Checking configs...
+2020-08-04 00:11:38.655 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 00:11:38.655 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 00:11:38.700 -03:00 [DBG] Checking config with revision #39
+2020-08-04 00:11:38.700 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 00:11:38.700 -03:00 [DBG] Waiting to check configs...
+2020-08-04 00:11:38.700 -03:00 [DBG] Processing config rev#39
+2020-08-04 00:11:38.703 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 15
+2020-08-04 00:11:38.703 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 00:11:38.703 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 00:11:41.460 -03:00 [DBG] Checking configs...
+2020-08-04 00:11:41.460 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 00:11:41.460 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 00:11:42.143 -03:00 [DBG] Checking config with revision #39
+2020-08-04 00:11:42.143 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 00:11:42.143 -03:00 [DBG] Waiting to check configs...
+2020-08-04 00:11:42.143 -03:00 [DBG] Processing config rev#39
+2020-08-04 00:11:42.150 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 15
+2020-08-04 00:11:42.151 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 00:11:42.151 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 00:11:44.568 -03:00 [INF] Operations that exceeded service threshold: [{"service":"kv","count":2,"top":[{"operation_name":"SubDocDictUpsert","last_operaion_id":"0x3b","last_local_address":"192.168.0.34:55442","last_remote_address":"191.233.233.54:11210","last_local_id":"185ad57f81392d8c/0c420a5e186d9b78","last_dispatch_us":1079639,"total_us":1081621,"encode_us":180,"dispatch_us":1079639,"server_us":22,"decode_us":150},{"operation_name":"SubArrayPushLast","last_operaion_id":"0x3c","last_local_address":"192.168.0.34:55440","last_remote_address":"191.233.233.54:11210","last_local_id":"185ad57f81392d8c/bb5b0b6adda00836","last_dispatch_us":718198,"total_us":719325,"encode_us":219,"dispatch_us":718198,"server_us":18,"decode_us":23}]}]
+2020-08-04 00:11:44.726 -03:00 [DBG] Checking configs...
+2020-08-04 00:11:44.738 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 00:11:44.739 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 00:11:44.868 -03:00 [DBG] Checking config with revision #39
+2020-08-04 00:11:44.869 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 00:11:44.870 -03:00 [DBG] Waiting to check configs...
+2020-08-04 00:11:44.870 -03:00 [DBG] Processing config rev#39
+2020-08-04 00:11:44.958 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 15
+2020-08-04 00:11:44.958 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 00:11:44.958 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 00:11:49.249 -03:00 [DBG] Checking configs...
+2020-08-04 00:11:49.251 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 00:11:49.253 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 00:11:56.779 -03:00 [DBG] Checking config with revision #39
+2020-08-04 00:11:56.779 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 00:11:56.780 -03:00 [DBG] Waiting to check configs...
+2020-08-04 00:11:56.780 -03:00 [DBG] Processing config rev#39
+2020-08-04 00:11:56.782 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 15
+2020-08-04 00:11:56.782 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 00:11:56.782 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 00:11:56.809 -03:00 [DBG] Sending SubDocDictUpsert`1 with key 36e21fd7-03c7-440f-8bad-fc7314acc172 using server 191.233.233.54:11210
+2020-08-04 00:11:56.865 -03:00 [DBG] Operation doesn't support retries for key 36e21fd7-03c7-440f-8bad-fc7314acc172
+2020-08-04 00:11:56.913 -03:00 [DBG] Operation for key 36e21fd7-03c7-440f-8bad-fc7314acc172 failed after 1 retries using vb194 from rev39 and opaque66. Reason: KV Error: {Name="KEY_ENOENT", Description="Not Found", Attributes="item-only"}
+2020-08-04 00:11:56.914 -03:00 [INF] Operation: "36e21fd7-03c7-440f-8bad-fc7314acc172" - Status: Finalizado com erro - Title: Fim do processamento - Message: System.ArgumentNullException: Value cannot be null. (Parameter 'input')
+   at System.Text.RegularExpressions.Regex.Replace(String input, String replacement)
+   at Commons.Helpers.RemoveNaoNumericos(String text) in C:\Projetos\HubMicroservices\NewHubMicroservices\Commons\Helpers.cs:line 261
+   at NetCoreJobsMicroservice.operations.getProviderAsync(String cnpj, IConfiguration config) in C:\Projetos\HubMicroservices\NewHubMicroservices\OrchestratorAppService\operations.cs:line 738
+   at NetCoreJobsMicroservice.operations.HandleFileAsync(CustomerFull customerFull, IConfiguration config, Guid eventToken, ILogger`1 _logger, IBucket _bucket, String authorization) in C:\Projetos\HubMicroservices\NewHubMicroservices\OrchestratorAppService\operations.cs:line 427
+2020-08-04 00:11:56.914 -03:00 [DBG] Sending SubArrayPushLast`1 with key 36e21fd7-03c7-440f-8bad-fc7314acc172 using server 191.233.233.54:11210
+2020-08-04 00:11:56.932 -03:00 [DBG] Operation doesn't support retries for key 36e21fd7-03c7-440f-8bad-fc7314acc172
+2020-08-04 00:11:56.932 -03:00 [DBG] Operation for key 36e21fd7-03c7-440f-8bad-fc7314acc172 failed after 1 retries using vb194 from rev39 and opaque67. Reason: KV Error: {Name="KEY_ENOENT", Description="Not Found", Attributes="item-only"}
+2020-08-04 00:11:59.290 -03:00 [DBG] Checking configs...
+2020-08-04 00:11:59.291 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 00:11:59.291 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 00:11:59.322 -03:00 [DBG] Checking config with revision #39
+2020-08-04 00:11:59.322 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 00:11:59.322 -03:00 [DBG] Waiting to check configs...
+2020-08-04 00:11:59.322 -03:00 [DBG] Processing config rev#39
+2020-08-04 00:11:59.325 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 15
+2020-08-04 00:11:59.325 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 00:11:59.325 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 00:12:01.825 -03:00 [DBG] Checking configs...
+2020-08-04 00:12:01.826 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 00:12:01.826 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 00:12:01.858 -03:00 [DBG] Checking config with revision #39
+2020-08-04 00:12:01.858 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 00:12:01.858 -03:00 [DBG] Waiting to check configs...
+2020-08-04 00:12:01.858 -03:00 [DBG] Processing config rev#39
+2020-08-04 00:12:01.861 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 15
+2020-08-04 00:12:01.861 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 00:12:01.861 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 00:12:04.318 -03:00 [INF] Request starting HTTP/2.0 POST https://localhost:44358/api/v1/Orchestrator/Customer/374f4ad4-d577-4f13-a20b-23c84c6a7990 application/json 10009
+2020-08-04 00:12:04.318 -03:00 [INF] Executing endpoint 'NetCoreJobsMicroservice.Controler.OrchestratorController.PostAsync (OrchestratorAppService)'
+2020-08-04 00:12:04.319 -03:00 [INF] Route matched with {action = "Post", controller = "Orchestrator"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Object] PostAsync(System.Guid, Commons.Base.CustomerFull) on controller NetCoreJobsMicroservice.Controler.OrchestratorController (OrchestratorAppService).
+2020-08-04 00:12:04.336 -03:00 [DBG] Sending Set`1 with key 249849f4-17f9-4552-b476-13316b228650 using server 191.233.233.54:11210
+2020-08-04 00:12:05.955 -03:00 [DBG] Operation Set`1 succeeded 1 for key 249849f4-17f9-4552-b476-13316b228650 : null
+2020-08-04 00:12:05.963 -03:00 [DBG] Checking configs...
+2020-08-04 00:12:05.964 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 00:12:05.964 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 00:12:06.006 -03:00 [DBG] Sending SubDocDictUpsert`1 with key 249849f4-17f9-4552-b476-13316b228650 using server 191.233.233.54:11210
+2020-08-04 00:12:06.007 -03:00 [DBG] Sending SubDocDictUpsert`1 with key 249849f4-17f9-4552-b476-13316b228650 using server 191.233.233.54:11210
+2020-08-04 00:12:06.012 -03:00 [DBG] Checking config with revision #39
+2020-08-04 00:12:06.012 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 00:12:06.012 -03:00 [DBG] Processing config rev#39
+2020-08-04 00:12:06.012 -03:00 [DBG] Waiting to check configs...
+2020-08-04 00:12:06.015 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 15
+2020-08-04 00:12:06.015 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 00:12:06.015 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 00:12:06.029 -03:00 [DBG] Operation SubDocDictUpsert`1 succeeded 1 for key 249849f4-17f9-4552-b476-13316b228650 : null
+2020-08-04 00:12:06.030 -03:00 [INF] Operation: "249849f4-17f9-4552-b476-13316b228650" - Status: Em processamento - Title: Inicio da leitura do objeto - Message: null
+2020-08-04 00:12:06.030 -03:00 [DBG] Sending SubArrayPushLast`1 with key 249849f4-17f9-4552-b476-13316b228650 using server 191.233.233.54:11210
+2020-08-04 00:12:06.031 -03:00 [DBG] Operation SubDocDictUpsert`1 succeeded 1 for key 249849f4-17f9-4552-b476-13316b228650 : null
+2020-08-04 00:12:06.032 -03:00 [INF] Operation: "249849f4-17f9-4552-b476-13316b228650" - Status: Em andamento - Title: Objeto válido - Message: Objeto do body válido
+2020-08-04 00:12:06.032 -03:00 [DBG] Sending SubArrayPushLast`1 with key 249849f4-17f9-4552-b476-13316b228650 using server 191.233.233.54:11210
+2020-08-04 00:12:06.053 -03:00 [DBG] Operation SubArrayPushLast`1 succeeded 1 for key 249849f4-17f9-4552-b476-13316b228650 : null
+2020-08-04 00:12:06.053 -03:00 [DBG] Operation SubArrayPushLast`1 succeeded 1 for key 249849f4-17f9-4552-b476-13316b228650 : null
+2020-08-04 00:12:06.058 -03:00 [INF] Executing ObjectResult, writing value of type 'System.Guid'.
+2020-08-04 00:12:06.059 -03:00 [INF] Executed action NetCoreJobsMicroservice.Controler.OrchestratorController.PostAsync (OrchestratorAppService) in 1739.7891ms
+2020-08-04 00:12:06.059 -03:00 [INF] Executed endpoint 'NetCoreJobsMicroservice.Controler.OrchestratorController.PostAsync (OrchestratorAppService)'
+2020-08-04 00:12:06.060 -03:00 [INF] Request finished in 1742.3672ms 200 application/json; charset=utf-8
+2020-08-04 00:12:06.196 -03:00 [DBG] Sending SubDocDictUpsert`1 with key 249849f4-17f9-4552-b476-13316b228650 using server 191.233.233.54:11210
+2020-08-04 00:12:06.199 -03:00 [DBG] Sending SubDocDictUpsert`1 with key 249849f4-17f9-4552-b476-13316b228650 using server 191.233.233.54:11210
+2020-08-04 00:12:06.201 -03:00 [DBG] Sending SubDocDictUpsert`1 with key 249849f4-17f9-4552-b476-13316b228650 using server 191.233.233.54:11210
+2020-08-04 00:12:06.215 -03:00 [DBG] Operation SubDocDictUpsert`1 succeeded 1 for key 249849f4-17f9-4552-b476-13316b228650 : null
+2020-08-04 00:12:06.216 -03:00 [INF] Operation: "249849f4-17f9-4552-b476-13316b228650" - Status: Em processamento - Title: Contrato localizado - Message: null
+2020-08-04 00:12:06.216 -03:00 [DBG] Sending SubArrayPushLast`1 with key 249849f4-17f9-4552-b476-13316b228650 using server 191.233.233.54:11210
+2020-08-04 00:12:06.217 -03:00 [DBG] Operation SubDocDictUpsert`1 succeeded 1 for key 249849f4-17f9-4552-b476-13316b228650 : null
+2020-08-04 00:12:06.217 -03:00 [INF] Operation: "249849f4-17f9-4552-b476-13316b228650" - Status: Em processamento - Title: Contrato ativo - Message: null
+2020-08-04 00:12:06.217 -03:00 [DBG] Sending SubArrayPushLast`1 with key 249849f4-17f9-4552-b476-13316b228650 using server 191.233.233.54:11210
+2020-08-04 00:12:06.235 -03:00 [DBG] Operation SubDocDictUpsert`1 succeeded 1 for key 249849f4-17f9-4552-b476-13316b228650 : null
+2020-08-04 00:12:06.235 -03:00 [DBG] Operation SubArrayPushLast`1 succeeded 1 for key 249849f4-17f9-4552-b476-13316b228650 : null
+2020-08-04 00:12:06.238 -03:00 [INF] Operation: "249849f4-17f9-4552-b476-13316b228650" - Status: Em processamento - Title: Inicio empresa - Message: CNPJ:38202338000107
+2020-08-04 00:12:06.238 -03:00 [DBG] Sending SubArrayPushLast`1 with key 249849f4-17f9-4552-b476-13316b228650 using server 191.233.233.54:11210
+2020-08-04 00:12:06.263 -03:00 [DBG] Operation SubArrayPushLast`1 succeeded 1 for key 249849f4-17f9-4552-b476-13316b228650 : null
+2020-08-04 00:12:06.263 -03:00 [DBG] Operation SubArrayPushLast`1 succeeded 1 for key 249849f4-17f9-4552-b476-13316b228650 : null
+2020-08-04 00:12:06.338 -03:00 [DBG] Sending SubDocDictUpsert`1 with key 249849f4-17f9-4552-b476-13316b228650 using server 191.233.233.54:11210
+2020-08-04 00:12:08.109 -03:00 [DBG] Operation SubDocDictUpsert`1 succeeded 1 for key 249849f4-17f9-4552-b476-13316b228650 : null
+2020-08-04 00:12:08.109 -03:00 [INF] Operation: "249849f4-17f9-4552-b476-13316b228650" - Status: Em processamento - Title: Empresa incluida/atualizada - Message: CNPJ:38202338000107
+2020-08-04 00:12:08.110 -03:00 [DBG] Sending SubArrayPushLast`1 with key 249849f4-17f9-4552-b476-13316b228650 using server 191.233.233.54:11210
+2020-08-04 00:12:08.688 -03:00 [INF] Operations that exceeded service threshold: [{"service":"kv","count":1,"top":[{"operation_name":"Set","last_operaion_id":"0x46","last_local_address":"192.168.0.34:55440","last_remote_address":"191.233.233.54:11210","last_local_id":"185ad57f81392d8c/bb5b0b6adda00836","last_dispatch_us":1618142,"total_us":1619335,"encode_us":327,"dispatch_us":1618142,"server_us":76,"decode_us":92}]}]
+2020-08-04 00:12:08.700 -03:00 [DBG] Operation SubArrayPushLast`1 succeeded 1 for key 249849f4-17f9-4552-b476-13316b228650 : null
+2020-08-04 00:12:08.709 -03:00 [DBG] Checking configs...
+2020-08-04 00:12:08.709 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 00:12:08.710 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 00:12:08.742 -03:00 [DBG] Checking config with revision #39
+2020-08-04 00:12:08.743 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 00:12:08.743 -03:00 [DBG] Waiting to check configs...
+2020-08-04 00:12:08.745 -03:00 [DBG] Processing config rev#39
+2020-08-04 00:12:08.748 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 15
+2020-08-04 00:12:08.748 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 00:12:08.748 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 00:12:10.056 -03:00 [DBG] Sending SubDocDictUpsert`1 with key 249849f4-17f9-4552-b476-13316b228650 using server 191.233.233.54:11210
+2020-08-04 00:12:13.353 -03:00 [DBG] Checking configs...
+2020-08-04 00:12:13.353 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 00:12:13.353 -03:00 [DBG] Operation SubDocDictUpsert`1 succeeded 1 for key 249849f4-17f9-4552-b476-13316b228650 : null
+2020-08-04 00:12:13.353 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 00:12:13.354 -03:00 [INF] Operation: "249849f4-17f9-4552-b476-13316b228650" - Status: Em processamento - Title: Nenhum provedor listado - Message: CNPJ:38202338000107
+2020-08-04 00:12:13.354 -03:00 [DBG] Sending SubArrayPushLast`1 with key 249849f4-17f9-4552-b476-13316b228650 using server 191.233.233.54:11210
+2020-08-04 00:12:13.458 -03:00 [DBG] Checking config with revision #39
+2020-08-04 00:12:13.458 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 00:12:13.459 -03:00 [DBG] Waiting to check configs...
+2020-08-04 00:12:13.459 -03:00 [DBG] Operation SubArrayPushLast`1 succeeded 1 for key 249849f4-17f9-4552-b476-13316b228650 : null
+2020-08-04 00:12:13.492 -03:00 [DBG] Processing config rev#39
+2020-08-04 00:12:13.500 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 15
+2020-08-04 00:12:13.500 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 00:12:13.501 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 00:12:16.023 -03:00 [DBG] Checking configs...
+2020-08-04 00:12:16.024 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 00:12:16.024 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 00:12:16.669 -03:00 [DBG] Checking config with revision #39
+2020-08-04 00:12:16.669 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 00:12:16.699 -03:00 [DBG] Processing config rev#39
+2020-08-04 00:12:16.702 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 15
+2020-08-04 00:12:16.702 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 00:12:16.702 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 00:12:16.702 -03:00 [DBG] Waiting to check configs...
+2020-08-04 00:12:16.703 -03:00 [DBG] Sending SubDocDictUpsert`1 with key 249849f4-17f9-4552-b476-13316b228650 using server 191.233.233.54:11210
+2020-08-04 00:12:16.769 -03:00 [DBG] Operation SubDocDictUpsert`1 succeeded 1 for key 249849f4-17f9-4552-b476-13316b228650 : null
+2020-08-04 00:12:16.770 -03:00 [INF] Operation: "249849f4-17f9-4552-b476-13316b228650" - Status: Em processamento - Title: Dados do funcionario atualizados - Message: CNPJ empresa: 38202338000107 CPF pessoa:28581084044
+2020-08-04 00:12:16.770 -03:00 [DBG] Sending SubArrayPushLast`1 with key 249849f4-17f9-4552-b476-13316b228650 using server 191.233.233.54:11210
+2020-08-04 00:12:17.423 -03:00 [DBG] Operation SubArrayPushLast`1 succeeded 1 for key 249849f4-17f9-4552-b476-13316b228650 : null
+2020-08-04 00:12:24.709 -03:00 [DBG] Checking configs...
+2020-08-04 00:12:24.710 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 00:12:24.713 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 00:12:25.761 -03:00 [DBG] Checking config with revision #39
+2020-08-04 00:12:25.761 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 00:12:25.761 -03:00 [DBG] Waiting to check configs...
+2020-08-04 00:12:27.001 -03:00 [DBG] Processing config rev#39
+2020-08-04 00:12:27.007 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 15
+2020-08-04 00:12:27.007 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 00:12:27.007 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 00:12:28.679 -03:00 [DBG] Checking configs...
+2020-08-04 00:12:28.679 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 00:12:28.680 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 00:12:29.882 -03:00 [DBG] Checking config with revision #39
+2020-08-04 00:12:29.882 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 00:12:29.883 -03:00 [DBG] Waiting to check configs...
+2020-08-04 00:12:29.883 -03:00 [DBG] Processing config rev#39
+2020-08-04 00:12:29.883 -03:00 [INF] Operations that exceeded service threshold: [{"service":"kv","count":4,"top":[{"operation_name":"SubDocDictUpsert","last_operaion_id":"0x55","last_local_address":"192.168.0.34:55442","last_remote_address":"191.233.233.54:11210","last_local_id":"185ad57f81392d8c/0c420a5e186d9b78","last_dispatch_us":3296032,"total_us":3298282,"encode_us":290,"dispatch_us":3296032,"server_us":550,"decode_us":80},{"operation_name":"SubArrayPushLast","last_operaion_id":"0x53","last_local_address":"192.168.0.34:55442","last_remote_address":"191.233.233.54:11210","last_local_id":"185ad57f81392d8c/0c420a5e186d9b78","last_dispatch_us":589847,"total_us":590427,"encode_us":68,"dispatch_us":589847,"server_us":126,"decode_us":88},{"operation_name":"SubDocDictUpsert","last_operaion_id":"0x52","last_local_address":"192.168.0.34:55440","last_remote_address":"191.233.233.54:11210","last_local_id":"185ad57f81392d8c/bb5b0b6adda00836","last_dispatch_us":556832,"total_us":1771038,"encode_us":81,"dispatch_us":556832,"server_us":99,"decode_us":14},{"operation_name":"SubArrayPushLast","last_operaion_id":"0x5a","last_local_address":"192.168.0.34:55440","last_remote_address":"191.233.233.54:11210","last_local_id":"185ad57f81392d8c/bb5b0b6adda00836","last_dispatch_us":652019,"total_us":652998,"encode_us":248,"dispatch_us":652019,"server_us":83,"decode_us":54}]}]
+2020-08-04 00:12:29.885 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 15
+2020-08-04 00:12:29.885 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 00:12:29.885 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 00:12:33.761 -03:00 [DBG] Checking configs...
+2020-08-04 00:12:33.762 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 00:12:33.762 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 00:12:34.624 -03:00 [DBG] Checking config with revision #39
+2020-08-04 00:12:34.625 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 00:12:34.625 -03:00 [DBG] Waiting to check configs...
+2020-08-04 00:12:34.660 -03:00 [DBG] Processing config rev#39
+2020-08-04 00:12:34.723 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 15
+2020-08-04 00:12:34.723 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 00:12:34.723 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 00:12:50.386 -03:00 [DBG] Checking configs...
+2020-08-04 00:12:50.387 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 00:12:50.387 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 00:12:50.446 -03:00 [DBG] Checking config with revision #39
+2020-08-04 00:12:50.446 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 00:12:50.446 -03:00 [DBG] Waiting to check configs...
+2020-08-04 00:12:50.447 -03:00 [DBG] Processing config rev#39
+2020-08-04 00:12:50.449 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 15
+2020-08-04 00:12:50.449 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 00:12:50.449 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 18:58:12.226 -03:00 [INF] User profile is available. Using 'C:\Users\ciber\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-08-04 18:58:14.427 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-08-04 18:58:14.428 -03:00 [INF] Hosting environment: Development
+2020-08-04 18:58:14.429 -03:00 [INF] Content root path: C:\Projetos\HubMicroservices\NewHubMicroservices\OrchestratorAppService
+2020-08-04 18:58:14.584 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44358/  
+2020-08-04 18:58:14.666 -03:00 [INF] Executing endpoint '/ HTTP: GET'
+2020-08-04 18:58:14.705 -03:00 [INF] Executed endpoint '/ HTTP: GET'
+2020-08-04 18:58:14.710 -03:00 [INF] Request finished in 137.1353ms 200 
+2020-08-04 18:58:14.826 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44358/favicon.ico  
+2020-08-04 18:58:14.856 -03:00 [INF] Request finished in 29.8635ms 404 
+2020-08-04 19:23:55.404 -03:00 [INF] User profile is available. Using 'C:\Users\ciber\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-08-04 19:23:57.110 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-08-04 19:23:57.111 -03:00 [INF] Hosting environment: Development
+2020-08-04 19:23:57.111 -03:00 [INF] Content root path: C:\Projetos\HubMicroservices\NewHubMicroservices\OrchestratorAppService
+2020-08-04 19:23:57.256 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44358/  
+2020-08-04 19:23:57.310 -03:00 [INF] Executing endpoint '/ HTTP: GET'
+2020-08-04 19:23:57.349 -03:00 [INF] Executed endpoint '/ HTTP: GET'
+2020-08-04 19:23:57.356 -03:00 [INF] Request finished in 109.8899ms 200 
+2020-08-04 20:20:33.416 -03:00 [INF] User profile is available. Using 'C:\Users\ciber\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-08-04 20:20:33.940 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-08-04 20:20:33.941 -03:00 [INF] Hosting environment: Development
+2020-08-04 20:20:33.941 -03:00 [INF] Content root path: C:\Projetos\HubMicroservices\NewHubMicroservices\OrchestratorAppService
+2020-08-04 20:20:34.018 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44358/  
+2020-08-04 20:20:34.060 -03:00 [INF] Executing endpoint '/ HTTP: GET'
+2020-08-04 20:20:34.089 -03:00 [INF] Executed endpoint '/ HTTP: GET'
+2020-08-04 20:20:34.092 -03:00 [INF] Request finished in 81.7215ms 200 
+2020-08-04 20:20:45.644 -03:00 [INF] Request starting HTTP/2.0 POST https://localhost:44358/api/v1/Orchestrator/Customer/374f4ad4-d577-4f13-a20b-23c84c6a7990 application/json 10009
+2020-08-04 20:20:45.663 -03:00 [INF] Executing endpoint 'NetCoreJobsMicroservice.Controler.OrchestratorController.PostAsync (OrchestratorAppService)'
+2020-08-04 20:20:45.750 -03:00 [INF] Route matched with {action = "Post", controller = "Orchestrator"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Object] PostAsync(System.Guid, Commons.Base.CustomerFull) on controller NetCoreJobsMicroservice.Controler.OrchestratorController (OrchestratorAppService).
+2020-08-04 20:20:45.968 -03:00 [INF] Version: 2.7.17.0
+2020-08-04 20:20:46.018 -03:00 [DBG] Waiting to check configs...
+2020-08-04 20:20:46.295 -03:00 [INF] Configuration: {"UseConnectionPooling":false,"EnableDeadServiceUriPing":true,"VBucketRetrySleepTime":100,"QueryFailedThreshold":2,"QueryRequestTimeout":75000,"EnableQueryTiming":false,"SearchRequestTimeout":75000,"NodeAvailableCheckInterval":1000,"EnableTcpKeepAlives":true,"TcpKeepAliveTime":7200000,"TcpKeepAliveInterval":1000,"IOErrorThreshold":10,"IOErrorCheckInterval":500,"LoggerFactory":{},"UseSsl":false,"SslPort":11207,"ApiPort":8092,"MgmtPort":8091,"DirectPort":11210,"HttpsMgmtPort":18091,"HttpsApiPort":18092,"ObserveTimeout":500,"ObserveInterval":10,"MaxViewRetries":2,"ViewHardTimeout":30000,"Servers":["http://191.238.211.211:8091/pools"],"SerializationSettings":{"ReferenceLoopHandling":0,"MissingMemberHandling":0,"ObjectCreationHandling":0,"NullValueHandling":0,"DefaultValueHandling":0,"Converters":[],"PreserveReferencesHandling":0,"TypeNameHandling":0,"MetadataPropertyHandling":0,"TypeNameAssemblyFormat":0,"TypeNameAssemblyFormatHandling":0,"ConstructorHandling":0,"ContractResolver":{"DynamicCodeGeneration":false,"DefaultMembersSearchFlags":20,"SerializeCompilerGeneratedMembers":false,"IgnoreSerializableInterface":false,"IgnoreSerializableAttribute":true,"IgnoreIsSpecifiedMembers":false,"IgnoreShouldSerializeMembers":false,"NamingStrategy":{"ProcessDictionaryKeys":true,"ProcessExtensionDataNames":false,"OverrideSpecifiedNames":true}},"EqualityComparer":null,"ReferenceResolver":null,"ReferenceResolverProvider":null,"TraceWriter":null,"Binder":null,"SerializationBinder":null,"Error":null,"Context":{"State":0,"Context":null},"DateFormatString":"yyyy'-'MM'-'dd'T'HH':'mm':'ss.FFFFFFFK","MaxDepth":null,"Formatting":0,"DateFormatHandling":0,"DateTimeZoneHandling":3,"DateParseHandling":1,"FloatFormatHandling":0,"FloatParseHandling":0,"StringEscapeHandling":0,"Culture":"(Default)","CheckAdditionalContent":false},"DeserializationSettings":{"ReferenceLoopHandling":0,"MissingMemberHandling":0,"ObjectCreationHandling":0,"NullValueHandling":0,"DefaultValueHandling":0,"Converters":[],"PreserveReferencesHandling":0,"TypeNameHandling":0,"MetadataPropertyHandling":0,"TypeNameAssemblyFormat":0,"TypeNameAssemblyFormatHandling":0,"ConstructorHandling":0,"ContractResolver":{"DynamicCodeGeneration":false,"DefaultMembersSearchFlags":20,"SerializeCompilerGeneratedMembers":false,"IgnoreSerializableInterface":false,"IgnoreSerializableAttribute":true,"IgnoreIsSpecifiedMembers":false,"IgnoreShouldSerializeMembers":false,"NamingStrategy":{"ProcessDictionaryKeys":true,"ProcessExtensionDataNames":false,"OverrideSpecifiedNames":true}},"EqualityComparer":null,"ReferenceResolver":null,"ReferenceResolverProvider":null,"TraceWriter":null,"Binder":null,"SerializationBinder":null,"Error":null,"Context":{"State":0,"Context":null},"DateFormatString":"yyyy'-'MM'-'dd'T'HH':'mm':'ss.FFFFFFFK","MaxDepth":null,"Formatting":0,"DateFormatHandling":0,"DateTimeZoneHandling":3,"DateParseHandling":1,"FloatFormatHandling":0,"FloatParseHandling":0,"StringEscapeHandling":0,"Culture":"(Default)","CheckAdditionalContent":false},"BucketConfigs":{"DataBucket001":{"UseEnhancedDurability":false,"UseKvErrorMap":false,"UseSsl":false,"Servers":["http://191.238.211.211:8091/pools"],"Port":11210,"BucketName":"DataBucket001","Password":"","Username":"","PoolConfiguration":{"EnableTcpKeepAlives":true,"TcpKeepAliveTime":7200000,"TcpKeepAliveInterval":1000,"MaxSize":2,"MinSize":1,"WaitTimeout":2500,"MaxAcquireIterationCount":5,"RecieveTimeout":2500,"ShutdownTimeout":10000,"OperationTimeout":2500,"UseSsl":false,"SendTimeout":15000,"ConnectTimeout":10000,"MaxCloseAttempts":5,"CloseAttemptInterval":100,"EnableOperationTiming":false,"BufferSize":16384,"Uri":null,"ForceSaslPlain":true},"ObserveTimeout":500,"ObserveInterval":10,"DefaultOperationLifespan":2500,"NetworkType":"auto"},"DataBucket003":{"UseEnhancedDurability":false,"UseKvErrorMap":false,"UseSsl":false,"Servers":["http://191.238.211.211:8091/pools"],"Port":11210,"BucketName":"DataBucket003","Password":"","Username":"","PoolConfiguration":{"EnableTcpKeepAlives":true,"TcpKeepAliveTime":7200000,"TcpKeepAliveInterval":1000,"MaxSize":2,"MinSize":1,"WaitTimeout":2500,"MaxAcquireIterationCount":5,"RecieveTimeout":2500,"ShutdownTimeout":10000,"OperationTimeout":2500,"UseSsl":false,"SendTimeout":15000,"ConnectTimeout":10000,"MaxCloseAttempts":5,"CloseAttemptInterval":100,"EnableOperationTiming":false,"BufferSize":16384,"Uri":null,"ForceSaslPlain":true},"ObserveTimeout":500,"ObserveInterval":10,"DefaultOperationLifespan":2500,"NetworkType":"auto"}},"PoolConfiguration":{"EnableTcpKeepAlives":true,"TcpKeepAliveTime":7200000,"TcpKeepAliveInterval":1000,"MaxSize":2,"MinSize":1,"WaitTimeout":2500,"MaxAcquireIterationCount":5,"RecieveTimeout":2500,"ShutdownTimeout":10000,"OperationTimeout":2500,"UseSsl":false,"SendTimeout":15000,"ConnectTimeout":10000,"MaxCloseAttempts":5,"CloseAttemptInterval":100,"EnableOperationTiming":false,"BufferSize":16384,"Uri":null,"ForceSaslPlain":true},"HeartbeatConfigInterval":2500.0,"ConfigPollInterval":2500,"HeartbeatConfigCheckFloor":0,"ConfigPollCheckFloor":0,"ViewRequestTimeout":75000,"DefaultConnectionLimit":5,"MaxServicePointIdleTime":100,"Expect100Continue":false,"EnableConfigHeartBeat":true,"ConfigPollEnabled":true,"EnableOperationTiming":false,"BufferSize":0,"DefaultOperationLifespan":2500,"ConfigurationProviders":3,"AnalyticsRequestTimeout":75000,"ForceSaslPlain":true,"OperationTracingEnabled":true,"OperationTracingServerDurationEnabled":true,"OrphanedResponseLoggingEnabled":true,"EnableCertificateAuthentication":false,"EnableCertificateRevocation":false,"CertificateFactory":null,"HttpServerCertificateValidationCallback":null,"KvServerCertificateValidationCallback":null,"NetworkType":"auto"}
+2020-08-04 20:20:46.302 -03:00 [DBG] Trying to bootstrap with Couchbase.Configuration.Server.Providers.CarrierPublication.CarrierPublicationProvider.
+2020-08-04 20:20:46.308 -03:00 [DBG] Getting config for bucket DataBucket001
+2020-08-04 20:20:46.310 -03:00 [INF] Using network type: 'auto'
+2020-08-04 20:20:46.321 -03:00 [DBG] Bootstrapping with 191.233.233.54:11210
+2020-08-04 20:20:46.330 -03:00 [DBG] Creating PooledIOService "c8702747-96b2-4aea-9c9c-7f9af4babef9"
+2020-08-04 20:20:46.336 -03:00 [DBG] Trying to acquire new connection! Refs=0
+2020-08-04 20:20:46.397 -03:00 [DBG] Authenticating socket "9f9ab714-9c40-42e7-8b0a-c2e460d210b0"
+2020-08-04 20:20:46.446 -03:00 [DBG] Authenticated socket "9f9ab714-9c40-42e7-8b0a-c2e460d210b0" succeeded: null
+2020-08-04 20:20:46.447 -03:00 [INF] 4. Authenticated applicationNetCore using Couchbase.Authentication.SASL.PlainTextMechanism - "11d8af08-8887-45ae-bae0-5747bcaf192b" - "9f9ab714-9c40-42e7-8b0a-c2e460d210b0" [191.233.233.54:11210].
+2020-08-04 20:20:46.448 -03:00 [DBG] Acquire new: "9f9ab714-9c40-42e7-8b0a-c2e460d210b0" | 191.233.233.54:11210 | [0, 2] - "59c82297-db21-4eef-bfe6-7177e6e615ce" - Disposed: false
+2020-08-04 20:20:46.476 -03:00 [INF] SupportsEnhancedDurability=false
+2020-08-04 20:20:46.476 -03:00 [INF] SupportsSubdocXAttributes=true
+2020-08-04 20:20:46.476 -03:00 [INF] SupportsEnhancedAuthentication=true
+2020-08-04 20:20:46.476 -03:00 [INF] SupportsKvErrorMap=true
+2020-08-04 20:20:46.476 -03:00 [INF] SupportsServerDuration=true
+2020-08-04 20:20:46.598 -03:00 [DBG] Trying to acquire new connection! Refs=1
+2020-08-04 20:20:46.621 -03:00 [DBG] Authenticating socket "2cc49d07-5dd1-4ea3-b432-35dab7da9af1"
+2020-08-04 20:20:46.643 -03:00 [DBG] Authenticated socket "2cc49d07-5dd1-4ea3-b432-35dab7da9af1" succeeded: null
+2020-08-04 20:20:46.644 -03:00 [INF] 4. Authenticated applicationNetCore using Couchbase.Authentication.SASL.PlainTextMechanism - "11d8af08-8887-45ae-bae0-5747bcaf192b" - "2cc49d07-5dd1-4ea3-b432-35dab7da9af1" [191.233.233.54:11210].
+2020-08-04 20:20:46.663 -03:00 [DBG] Acquire new: "2cc49d07-5dd1-4ea3-b432-35dab7da9af1" | 191.233.233.54:11210 | [1, 2] - "59c82297-db21-4eef-bfe6-7177e6e615ce" - Disposed: false
+2020-08-04 20:20:46.699 -03:00 [INF] SupportsEnhancedDurability=false
+2020-08-04 20:20:46.699 -03:00 [INF] SupportsSubdocXAttributes=true
+2020-08-04 20:20:46.699 -03:00 [INF] SupportsEnhancedAuthentication=true
+2020-08-04 20:20:46.699 -03:00 [INF] SupportsKvErrorMap=true
+2020-08-04 20:20:46.699 -03:00 [INF] SupportsServerDuration=true
+2020-08-04 20:20:46.879 -03:00 [INF] Bootstrap config: {"name":"DataBucket001","bucketType":"couchbase","authType":null,"saslPassword":null,"proxyPort":0,"replicaIndex":false,"uri":"/pools/default/buckets/DataBucket001?bucket_uuid=b2e018b10f753a9e41fef9d13c0bedb2","streamingUri":"/pools/default/bucketsStreaming/DataBucket001?bucket_uuid=b2e018b10f753a9e41fef9d13c0bedb2","terseBucketsBase":null,"terseStreamingBucketsBase":null,"localRandomKeyUri":null,"controllers":null,"nodes":[{"couchApiBase":"http://191.238.211.211:8092/DataBucket001%2Bb2e018b10f753a9e41fef9d13c0bedb2","couchApiBaseHTTPS":"https://$HOST:18092/default","replication":0.0,"clusterMembership":null,"status":null,"thisNode":false,"hostname":"191.233.233.54:8091","clusterCompatibility":0,"version":null,"os":null,"otpNode":null,"ports":{"proxy":11211,"direct":11210,"sslDirect":11207,"httpsCAPI":18092,"httpsMgmt":18091},"services":null}],"nodesExt":[{"services":{"fts":8094,"ftsSSL":18094,"mgmt":8091,"moxi":0,"kv":11210,"capi":8092,"kvSSL":11207,"capiSSL":18092,"mgmtSSL":18091,"projector":9999,"indexAdmin":9100,"indexScan":9101,"indexHttp":9102,"indexStreamInit":9103,"indexStreamCatchup":9104,"indexStreamMaint":9105,"n1ql":8093,"n1qlSSL":18093,"cbas":0,"cbasSSL":0},"hostname":null,"alternateAddresses":null,"HasAlternateAddress":false}],"stats":null,"ddocs":{"uri":"/pools/default/buckets/DataBucket001/ddocs"},"nodeLocator":"vbucket","uuid":"b2e018b10f753a9e41fef9d13c0bedb2","vBucketServerMap":{"hashAlgorithm":"CRC","numReplicas":1,"serverList":["191.233.233.54:11210"],"vBucketMap":[[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1]],"vBucketMapForward":[]},"replicaNumber":0,"threadsNumber":0,"quota":null,"basicStats":null,"bucketCapabilitiesVer":"","bucketCapabilities":["durableWrite","couchapi","dcp","cbhello","touch","cccp","xdcrCheckpointing","nodesExt","xattr"],"rev":39,"UseSsl":false,"SurrogateHost":"191.233.233.54","Username":null,"NetworkType":"auto"}
+2020-08-04 20:20:46.886 -03:00 [INF] o2-Creating the Servers list using rev#39
+2020-08-04 20:20:46.898 -03:00 [INF] Creating node 191.233.233.54:11210 for rev#39
+2020-08-04 20:20:46.900 -03:00 [DBG] Creating CouchbaseClientHandler.
+2020-08-04 20:20:46.904 -03:00 [DBG] Creating CouchbaseClientHandler.
+2020-08-04 20:20:46.904 -03:00 [DBG] Creating CouchbaseClientHandler.
+2020-08-04 20:20:46.905 -03:00 [DBG] Creating CouchbaseClientHandler.
+2020-08-04 20:20:46.905 -03:00 [DBG] Creating CouchbaseClientHandler.
+2020-08-04 20:20:46.906 -03:00 [DBG] Creating CouchbaseClientHandler.
+2020-08-04 20:20:46.911 -03:00 [INF] Initialization succeeded for node 191.233.233.54:11210
+2020-08-04 20:20:46.918 -03:00 [INF] Creating the KeyMapper list using rev#39
+2020-08-04 20:20:46.925 -03:00 [INF] Creating VBuckets 1024 and FMaps 0 for Rev#39
+2020-08-04 20:20:46.927 -03:00 [INF] Creating VBucketMapForwards 0
+2020-08-04 20:20:46.929 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 20:20:46.934 -03:00 [DBG] Creating bucket refCount# 0
+2020-08-04 20:20:46.938 -03:00 [INF] Config updated old/new: 0, 39
+2020-08-04 20:20:52.704 -03:00 [DBG] Checking configs...
+2020-08-04 20:20:52.707 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 20:20:52.708 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 20:20:52.726 -03:00 [DBG] Sending Set`1 with key c4a67284-126b-44f4-a970-bad5f50a8432 using server 191.233.233.54:11210
+2020-08-04 20:20:52.734 -03:00 [DBG] Sending SubDocDictUpsert`1 with key c4a67284-126b-44f4-a970-bad5f50a8432 using server 191.233.233.54:11210
+2020-08-04 20:20:52.759 -03:00 [DBG] Checking config with revision #39
+2020-08-04 20:20:52.760 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 20:20:52.760 -03:00 [DBG] Waiting to check configs...
+2020-08-04 20:20:52.760 -03:00 [DBG] Processing config rev#39
+2020-08-04 20:20:52.766 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 13
+2020-08-04 20:20:52.767 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 20:20:52.767 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 20:20:52.767 -03:00 [DBG] Operation Set`1 succeeded 1 for key c4a67284-126b-44f4-a970-bad5f50a8432 : null
+2020-08-04 20:20:52.784 -03:00 [DBG] Operation SubDocDictUpsert`1 succeeded 1 for key c4a67284-126b-44f4-a970-bad5f50a8432 : null
+2020-08-04 20:20:52.787 -03:00 [INF] Operation: "c4a67284-126b-44f4-a970-bad5f50a8432" - Status: Em andamento - Title: Objeto válido - Message: Objeto do body válido
+2020-08-04 20:20:52.788 -03:00 [DBG] Sending SubDocDictUpsert`1 with key c4a67284-126b-44f4-a970-bad5f50a8432 using server 191.233.233.54:11210
+2020-08-04 20:20:52.791 -03:00 [DBG] Sending SubArrayPushLast`1 with key c4a67284-126b-44f4-a970-bad5f50a8432 using server 191.233.233.54:11210
+2020-08-04 20:20:52.809 -03:00 [DBG] Operation SubDocDictUpsert`1 succeeded 1 for key c4a67284-126b-44f4-a970-bad5f50a8432 : null
+2020-08-04 20:20:52.809 -03:00 [INF] Operation: "c4a67284-126b-44f4-a970-bad5f50a8432" - Status: Em processamento - Title: Inicio da leitura do objeto - Message: null
+2020-08-04 20:20:52.809 -03:00 [DBG] Sending SubArrayPushLast`1 with key c4a67284-126b-44f4-a970-bad5f50a8432 using server 191.233.233.54:11210
+2020-08-04 20:20:52.816 -03:00 [DBG] Operation SubArrayPushLast`1 succeeded 1 for key c4a67284-126b-44f4-a970-bad5f50a8432 : null
+2020-08-04 20:20:52.828 -03:00 [DBG] Operation SubArrayPushLast`1 succeeded 1 for key c4a67284-126b-44f4-a970-bad5f50a8432 : null
+2020-08-04 20:20:52.835 -03:00 [INF] Executing ObjectResult, writing value of type 'System.Guid'.
+2020-08-04 20:20:52.852 -03:00 [INF] Executed action NetCoreJobsMicroservice.Controler.OrchestratorController.PostAsync (OrchestratorAppService) in 7093.9315ms
+2020-08-04 20:20:52.853 -03:00 [INF] Executed endpoint 'NetCoreJobsMicroservice.Controler.OrchestratorController.PostAsync (OrchestratorAppService)'
+2020-08-04 20:20:52.854 -03:00 [INF] Request finished in 7211.7244ms 200 application/json; charset=utf-8
+2020-08-04 20:20:55.273 -03:00 [DBG] Checking configs...
+2020-08-04 20:20:55.276 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 20:20:55.278 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 20:20:55.307 -03:00 [DBG] Checking config with revision #39
+2020-08-04 20:20:55.307 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 20:20:55.308 -03:00 [DBG] Waiting to check configs...
+2020-08-04 20:20:55.308 -03:00 [DBG] Processing config rev#39
+2020-08-04 20:20:55.311 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 13
+2020-08-04 20:20:55.311 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 20:20:55.311 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 20:20:57.349 -03:00 [DBG] Sending SubDocDictUpsert`1 with key c4a67284-126b-44f4-a970-bad5f50a8432 using server 191.233.233.54:11210
+2020-08-04 20:20:57.367 -03:00 [DBG] Operation SubDocDictUpsert`1 succeeded 1 for key c4a67284-126b-44f4-a970-bad5f50a8432 : null
+2020-08-04 20:20:57.368 -03:00 [INF] Operation: "c4a67284-126b-44f4-a970-bad5f50a8432" - Status: Finalizado com erro - Title: Fim do processamento - Message: System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it.
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean allowHttp2, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncBuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at NetCoreJobsMicroservice.operations.getHubCustomerAsync(Guid token, IConfiguration config) in C:\Projetos\HubMicroservices\NewHubMicroservices\OrchestratorAppService\operations.cs:line 729
+   at NetCoreJobsMicroservice.operations.HandleFileAsync(CustomerFull customerFull, IConfiguration config, Guid eventToken, ILogger`1 _logger, IBucket _bucket, String authorization) in C:\Projetos\HubMicroservices\NewHubMicroservices\OrchestratorAppService\operations.cs:line 36
+2020-08-04 20:20:57.368 -03:00 [DBG] Sending SubArrayPushLast`1 with key c4a67284-126b-44f4-a970-bad5f50a8432 using server 191.233.233.54:11210
+2020-08-04 20:20:57.391 -03:00 [DBG] Operation SubArrayPushLast`1 succeeded 1 for key c4a67284-126b-44f4-a970-bad5f50a8432 : null
+2020-08-04 20:20:57.820 -03:00 [DBG] Checking configs...
+2020-08-04 20:20:57.822 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 20:20:57.823 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 20:20:57.851 -03:00 [DBG] Checking config with revision #39
+2020-08-04 20:20:57.851 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 20:20:57.851 -03:00 [DBG] Waiting to check configs...
+2020-08-04 20:20:57.852 -03:00 [DBG] Processing config rev#39
+2020-08-04 20:20:57.854 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 13
+2020-08-04 20:20:57.854 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 20:20:57.854 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 20:21:00.352 -03:00 [DBG] Checking configs...
+2020-08-04 20:21:00.355 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 20:21:00.357 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 20:21:00.393 -03:00 [DBG] Checking config with revision #39
+2020-08-04 20:21:00.393 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 20:21:00.394 -03:00 [DBG] Waiting to check configs...
+2020-08-04 20:21:00.394 -03:00 [DBG] Processing config rev#39
+2020-08-04 20:21:00.399 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 13
+2020-08-04 20:21:00.400 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 20:21:00.400 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 20:21:02.906 -03:00 [DBG] Checking configs...
+2020-08-04 20:21:02.908 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 20:21:02.911 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 20:21:02.944 -03:00 [DBG] Checking config with revision #39
+2020-08-04 20:21:02.944 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 20:21:02.945 -03:00 [DBG] Waiting to check configs...
+2020-08-04 20:21:02.945 -03:00 [DBG] Processing config rev#39
+2020-08-04 20:21:02.948 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 13
+2020-08-04 20:21:02.948 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 20:21:02.949 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 20:21:05.446 -03:00 [DBG] Checking configs...
+2020-08-04 20:21:05.450 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 20:21:05.453 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 20:21:05.481 -03:00 [DBG] Checking config with revision #39
+2020-08-04 20:21:05.482 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 20:21:05.482 -03:00 [DBG] Waiting to check configs...
+2020-08-04 20:21:05.482 -03:00 [DBG] Processing config rev#39
+2020-08-04 20:21:05.488 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 13
+2020-08-04 20:21:05.488 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 20:21:05.488 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 20:21:07.983 -03:00 [DBG] Checking configs...
+2020-08-04 20:21:07.984 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 20:21:07.985 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 20:21:08.019 -03:00 [DBG] Checking config with revision #39
+2020-08-04 20:21:08.019 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 20:21:08.020 -03:00 [DBG] Waiting to check configs...
+2020-08-04 20:21:08.020 -03:00 [DBG] Processing config rev#39
+2020-08-04 20:21:08.022 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 13
+2020-08-04 20:21:08.022 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 20:21:08.022 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 20:21:10.529 -03:00 [DBG] Checking configs...
+2020-08-04 20:21:10.530 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 20:21:10.531 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 20:21:10.559 -03:00 [DBG] Checking config with revision #39
+2020-08-04 20:21:10.560 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 20:21:10.560 -03:00 [DBG] Waiting to check configs...
+2020-08-04 20:21:10.560 -03:00 [DBG] Processing config rev#39
+2020-08-04 20:21:10.562 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 13
+2020-08-04 20:21:10.562 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 20:21:10.563 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 20:21:13.073 -03:00 [DBG] Checking configs...
+2020-08-04 20:21:13.073 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 20:21:13.075 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 20:21:13.103 -03:00 [DBG] Checking config with revision #39
+2020-08-04 20:21:13.105 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 20:21:13.105 -03:00 [DBG] Waiting to check configs...
+2020-08-04 20:21:13.105 -03:00 [DBG] Processing config rev#39
+2020-08-04 20:21:13.108 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 13
+2020-08-04 20:21:13.108 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 20:21:13.108 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 20:21:15.619 -03:00 [DBG] Checking configs...
+2020-08-04 20:21:15.620 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 20:21:15.622 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 20:21:15.655 -03:00 [DBG] Checking config with revision #39
+2020-08-04 20:21:15.655 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 20:21:15.655 -03:00 [DBG] Waiting to check configs...
+2020-08-04 20:21:15.656 -03:00 [DBG] Processing config rev#39
+2020-08-04 20:21:15.659 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 13
+2020-08-04 20:21:15.659 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 20:21:15.659 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 20:21:18.169 -03:00 [DBG] Checking configs...
+2020-08-04 20:21:18.170 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 20:21:18.170 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 20:21:18.193 -03:00 [DBG] Checking config with revision #39
+2020-08-04 20:21:18.193 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 20:21:18.194 -03:00 [DBG] Waiting to check configs...
+2020-08-04 20:21:18.194 -03:00 [DBG] Processing config rev#39
+2020-08-04 20:21:18.196 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 13
+2020-08-04 20:21:18.196 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 20:21:18.196 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 20:21:20.699 -03:00 [DBG] Checking configs...
+2020-08-04 20:21:20.700 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 20:21:20.701 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 20:21:20.728 -03:00 [DBG] Checking config with revision #39
+2020-08-04 20:21:20.728 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 20:21:20.728 -03:00 [DBG] Waiting to check configs...
+2020-08-04 20:21:20.728 -03:00 [DBG] Processing config rev#39
+2020-08-04 20:21:20.731 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 13
+2020-08-04 20:21:20.731 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 20:21:20.731 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 20:21:23.229 -03:00 [DBG] Checking configs...
+2020-08-04 20:21:23.230 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 20:21:23.231 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 20:21:23.264 -03:00 [DBG] Checking config with revision #39
+2020-08-04 20:21:23.264 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 20:21:23.264 -03:00 [DBG] Processing config rev#39
+2020-08-04 20:21:23.264 -03:00 [DBG] Waiting to check configs...
+2020-08-04 20:21:23.267 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 13
+2020-08-04 20:21:23.267 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 20:21:23.267 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 20:21:25.779 -03:00 [DBG] Checking configs...
+2020-08-04 20:21:25.780 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 20:21:25.780 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 20:21:25.808 -03:00 [DBG] Checking config with revision #39
+2020-08-04 20:21:25.808 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 20:21:25.808 -03:00 [DBG] Waiting to check configs...
+2020-08-04 20:21:25.808 -03:00 [DBG] Processing config rev#39
+2020-08-04 20:21:25.814 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 13
+2020-08-04 20:21:25.814 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 20:21:25.814 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 20:21:28.319 -03:00 [DBG] Checking configs...
+2020-08-04 20:21:28.319 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 20:21:28.320 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 20:21:28.350 -03:00 [DBG] Checking config with revision #39
+2020-08-04 20:21:28.350 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 20:21:28.350 -03:00 [DBG] Waiting to check configs...
+2020-08-04 20:21:28.350 -03:00 [DBG] Processing config rev#39
+2020-08-04 20:21:28.354 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 13
+2020-08-04 20:21:28.354 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 20:21:28.354 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 20:21:30.864 -03:00 [DBG] Checking configs...
+2020-08-04 20:21:30.866 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 20:21:30.866 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 20:21:30.899 -03:00 [DBG] Checking config with revision #39
+2020-08-04 20:21:30.899 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 20:21:30.900 -03:00 [DBG] Waiting to check configs...
+2020-08-04 20:21:30.900 -03:00 [DBG] Processing config rev#39
+2020-08-04 20:21:30.903 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 13
+2020-08-04 20:21:30.903 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 20:21:30.903 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 20:22:35.987 -03:00 [INF] User profile is available. Using 'C:\Users\ciber\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-08-04 20:22:36.501 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-08-04 20:22:36.502 -03:00 [INF] Hosting environment: Development
+2020-08-04 20:22:36.508 -03:00 [INF] Content root path: C:\Projetos\HubMicroservices\NewHubMicroservices\OrchestratorAppService
+2020-08-04 20:22:36.577 -03:00 [INF] Request starting HTTP/2.0 POST https://localhost:44358/api/v1/Orchestrator/Customer/374f4ad4-d577-4f13-a20b-23c84c6a7990 application/json 10009
+2020-08-04 20:22:36.656 -03:00 [INF] Executing endpoint 'NetCoreJobsMicroservice.Controler.OrchestratorController.PostAsync (OrchestratorAppService)'
+2020-08-04 20:22:36.749 -03:00 [INF] Route matched with {action = "Post", controller = "Orchestrator"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Object] PostAsync(System.Guid, Commons.Base.CustomerFull) on controller NetCoreJobsMicroservice.Controler.OrchestratorController (OrchestratorAppService).
+2020-08-04 20:22:36.992 -03:00 [DBG] Waiting to check configs...
+2020-08-04 20:22:36.995 -03:00 [INF] Version: 2.7.17.0
+2020-08-04 20:22:37.490 -03:00 [INF] Configuration: {"UseConnectionPooling":false,"EnableDeadServiceUriPing":true,"VBucketRetrySleepTime":100,"QueryFailedThreshold":2,"QueryRequestTimeout":75000,"EnableQueryTiming":false,"SearchRequestTimeout":75000,"NodeAvailableCheckInterval":1000,"EnableTcpKeepAlives":true,"TcpKeepAliveTime":7200000,"TcpKeepAliveInterval":1000,"IOErrorThreshold":10,"IOErrorCheckInterval":500,"LoggerFactory":{},"UseSsl":false,"SslPort":11207,"ApiPort":8092,"MgmtPort":8091,"DirectPort":11210,"HttpsMgmtPort":18091,"HttpsApiPort":18092,"ObserveTimeout":500,"ObserveInterval":10,"MaxViewRetries":2,"ViewHardTimeout":30000,"Servers":["http://191.238.211.211:8091/pools"],"SerializationSettings":{"ReferenceLoopHandling":0,"MissingMemberHandling":0,"ObjectCreationHandling":0,"NullValueHandling":0,"DefaultValueHandling":0,"Converters":[],"PreserveReferencesHandling":0,"TypeNameHandling":0,"MetadataPropertyHandling":0,"TypeNameAssemblyFormat":0,"TypeNameAssemblyFormatHandling":0,"ConstructorHandling":0,"ContractResolver":{"DynamicCodeGeneration":false,"DefaultMembersSearchFlags":20,"SerializeCompilerGeneratedMembers":false,"IgnoreSerializableInterface":false,"IgnoreSerializableAttribute":true,"IgnoreIsSpecifiedMembers":false,"IgnoreShouldSerializeMembers":false,"NamingStrategy":{"ProcessDictionaryKeys":true,"ProcessExtensionDataNames":false,"OverrideSpecifiedNames":true}},"EqualityComparer":null,"ReferenceResolver":null,"ReferenceResolverProvider":null,"TraceWriter":null,"Binder":null,"SerializationBinder":null,"Error":null,"Context":{"State":0,"Context":null},"DateFormatString":"yyyy'-'MM'-'dd'T'HH':'mm':'ss.FFFFFFFK","MaxDepth":null,"Formatting":0,"DateFormatHandling":0,"DateTimeZoneHandling":3,"DateParseHandling":1,"FloatFormatHandling":0,"FloatParseHandling":0,"StringEscapeHandling":0,"Culture":"(Default)","CheckAdditionalContent":false},"DeserializationSettings":{"ReferenceLoopHandling":0,"MissingMemberHandling":0,"ObjectCreationHandling":0,"NullValueHandling":0,"DefaultValueHandling":0,"Converters":[],"PreserveReferencesHandling":0,"TypeNameHandling":0,"MetadataPropertyHandling":0,"TypeNameAssemblyFormat":0,"TypeNameAssemblyFormatHandling":0,"ConstructorHandling":0,"ContractResolver":{"DynamicCodeGeneration":false,"DefaultMembersSearchFlags":20,"SerializeCompilerGeneratedMembers":false,"IgnoreSerializableInterface":false,"IgnoreSerializableAttribute":true,"IgnoreIsSpecifiedMembers":false,"IgnoreShouldSerializeMembers":false,"NamingStrategy":{"ProcessDictionaryKeys":true,"ProcessExtensionDataNames":false,"OverrideSpecifiedNames":true}},"EqualityComparer":null,"ReferenceResolver":null,"ReferenceResolverProvider":null,"TraceWriter":null,"Binder":null,"SerializationBinder":null,"Error":null,"Context":{"State":0,"Context":null},"DateFormatString":"yyyy'-'MM'-'dd'T'HH':'mm':'ss.FFFFFFFK","MaxDepth":null,"Formatting":0,"DateFormatHandling":0,"DateTimeZoneHandling":3,"DateParseHandling":1,"FloatFormatHandling":0,"FloatParseHandling":0,"StringEscapeHandling":0,"Culture":"(Default)","CheckAdditionalContent":false},"BucketConfigs":{"DataBucket001":{"UseEnhancedDurability":false,"UseKvErrorMap":false,"UseSsl":false,"Servers":["http://191.238.211.211:8091/pools"],"Port":11210,"BucketName":"DataBucket001","Password":"","Username":"","PoolConfiguration":{"EnableTcpKeepAlives":true,"TcpKeepAliveTime":7200000,"TcpKeepAliveInterval":1000,"MaxSize":2,"MinSize":1,"WaitTimeout":2500,"MaxAcquireIterationCount":5,"RecieveTimeout":2500,"ShutdownTimeout":10000,"OperationTimeout":2500,"UseSsl":false,"SendTimeout":15000,"ConnectTimeout":10000,"MaxCloseAttempts":5,"CloseAttemptInterval":100,"EnableOperationTiming":false,"BufferSize":16384,"Uri":null,"ForceSaslPlain":true},"ObserveTimeout":500,"ObserveInterval":10,"DefaultOperationLifespan":2500,"NetworkType":"auto"},"DataBucket003":{"UseEnhancedDurability":false,"UseKvErrorMap":false,"UseSsl":false,"Servers":["http://191.238.211.211:8091/pools"],"Port":11210,"BucketName":"DataBucket003","Password":"","Username":"","PoolConfiguration":{"EnableTcpKeepAlives":true,"TcpKeepAliveTime":7200000,"TcpKeepAliveInterval":1000,"MaxSize":2,"MinSize":1,"WaitTimeout":2500,"MaxAcquireIterationCount":5,"RecieveTimeout":2500,"ShutdownTimeout":10000,"OperationTimeout":2500,"UseSsl":false,"SendTimeout":15000,"ConnectTimeout":10000,"MaxCloseAttempts":5,"CloseAttemptInterval":100,"EnableOperationTiming":false,"BufferSize":16384,"Uri":null,"ForceSaslPlain":true},"ObserveTimeout":500,"ObserveInterval":10,"DefaultOperationLifespan":2500,"NetworkType":"auto"}},"PoolConfiguration":{"EnableTcpKeepAlives":true,"TcpKeepAliveTime":7200000,"TcpKeepAliveInterval":1000,"MaxSize":2,"MinSize":1,"WaitTimeout":2500,"MaxAcquireIterationCount":5,"RecieveTimeout":2500,"ShutdownTimeout":10000,"OperationTimeout":2500,"UseSsl":false,"SendTimeout":15000,"ConnectTimeout":10000,"MaxCloseAttempts":5,"CloseAttemptInterval":100,"EnableOperationTiming":false,"BufferSize":16384,"Uri":null,"ForceSaslPlain":true},"HeartbeatConfigInterval":2500.0,"ConfigPollInterval":2500,"HeartbeatConfigCheckFloor":0,"ConfigPollCheckFloor":0,"ViewRequestTimeout":75000,"DefaultConnectionLimit":5,"MaxServicePointIdleTime":100,"Expect100Continue":false,"EnableConfigHeartBeat":true,"ConfigPollEnabled":true,"EnableOperationTiming":false,"BufferSize":0,"DefaultOperationLifespan":2500,"ConfigurationProviders":3,"AnalyticsRequestTimeout":75000,"ForceSaslPlain":true,"OperationTracingEnabled":true,"OperationTracingServerDurationEnabled":true,"OrphanedResponseLoggingEnabled":true,"EnableCertificateAuthentication":false,"EnableCertificateRevocation":false,"CertificateFactory":null,"HttpServerCertificateValidationCallback":null,"KvServerCertificateValidationCallback":null,"NetworkType":"auto"}
+2020-08-04 20:22:37.502 -03:00 [DBG] Trying to bootstrap with Couchbase.Configuration.Server.Providers.CarrierPublication.CarrierPublicationProvider.
+2020-08-04 20:22:37.506 -03:00 [DBG] Getting config for bucket DataBucket001
+2020-08-04 20:22:37.508 -03:00 [INF] Using network type: 'auto'
+2020-08-04 20:22:37.564 -03:00 [DBG] Bootstrapping with 191.233.233.54:11210
+2020-08-04 20:22:37.574 -03:00 [DBG] Creating PooledIOService "38a2f034-fc54-4ac9-a2b1-3c601086a455"
+2020-08-04 20:22:37.581 -03:00 [DBG] Trying to acquire new connection! Refs=0
+2020-08-04 20:22:37.650 -03:00 [DBG] Authenticating socket "8cc6211f-274d-4fef-8ed2-3601b26fbfbb"
+2020-08-04 20:22:37.707 -03:00 [DBG] Authenticated socket "8cc6211f-274d-4fef-8ed2-3601b26fbfbb" succeeded: null
+2020-08-04 20:22:37.707 -03:00 [INF] 4. Authenticated applicationNetCore using Couchbase.Authentication.SASL.PlainTextMechanism - "92561b71-d5f8-4dbe-aae4-b165ecb6bbae" - "8cc6211f-274d-4fef-8ed2-3601b26fbfbb" [191.233.233.54:11210].
+2020-08-04 20:22:37.709 -03:00 [DBG] Acquire new: "8cc6211f-274d-4fef-8ed2-3601b26fbfbb" | 191.233.233.54:11210 | [0, 2] - "99aedd77-4e53-4def-8b8a-2fc8b3633e83" - Disposed: false
+2020-08-04 20:22:37.736 -03:00 [INF] SupportsEnhancedDurability=false
+2020-08-04 20:22:37.737 -03:00 [INF] SupportsSubdocXAttributes=true
+2020-08-04 20:22:37.737 -03:00 [INF] SupportsEnhancedAuthentication=true
+2020-08-04 20:22:37.737 -03:00 [INF] SupportsKvErrorMap=true
+2020-08-04 20:22:37.737 -03:00 [INF] SupportsServerDuration=true
+2020-08-04 20:22:37.830 -03:00 [DBG] Trying to acquire new connection! Refs=1
+2020-08-04 20:22:37.850 -03:00 [DBG] Authenticating socket "3f46f8fd-0869-4910-8463-198f21473acf"
+2020-08-04 20:22:37.874 -03:00 [DBG] Authenticated socket "3f46f8fd-0869-4910-8463-198f21473acf" succeeded: null
+2020-08-04 20:22:37.874 -03:00 [INF] 4. Authenticated applicationNetCore using Couchbase.Authentication.SASL.PlainTextMechanism - "92561b71-d5f8-4dbe-aae4-b165ecb6bbae" - "3f46f8fd-0869-4910-8463-198f21473acf" [191.233.233.54:11210].
+2020-08-04 20:22:37.894 -03:00 [DBG] Acquire new: "3f46f8fd-0869-4910-8463-198f21473acf" | 191.233.233.54:11210 | [1, 2] - "99aedd77-4e53-4def-8b8a-2fc8b3633e83" - Disposed: false
+2020-08-04 20:22:37.928 -03:00 [INF] SupportsEnhancedDurability=false
+2020-08-04 20:22:37.928 -03:00 [INF] SupportsSubdocXAttributes=true
+2020-08-04 20:22:37.928 -03:00 [INF] SupportsEnhancedAuthentication=true
+2020-08-04 20:22:37.928 -03:00 [INF] SupportsKvErrorMap=true
+2020-08-04 20:22:37.929 -03:00 [INF] SupportsServerDuration=true
+2020-08-04 20:22:38.133 -03:00 [INF] Bootstrap config: {"name":"DataBucket001","bucketType":"couchbase","authType":null,"saslPassword":null,"proxyPort":0,"replicaIndex":false,"uri":"/pools/default/buckets/DataBucket001?bucket_uuid=b2e018b10f753a9e41fef9d13c0bedb2","streamingUri":"/pools/default/bucketsStreaming/DataBucket001?bucket_uuid=b2e018b10f753a9e41fef9d13c0bedb2","terseBucketsBase":null,"terseStreamingBucketsBase":null,"localRandomKeyUri":null,"controllers":null,"nodes":[{"couchApiBase":"http://191.238.211.211:8092/DataBucket001%2Bb2e018b10f753a9e41fef9d13c0bedb2","couchApiBaseHTTPS":"https://$HOST:18092/default","replication":0.0,"clusterMembership":null,"status":null,"thisNode":false,"hostname":"191.233.233.54:8091","clusterCompatibility":0,"version":null,"os":null,"otpNode":null,"ports":{"proxy":11211,"direct":11210,"sslDirect":11207,"httpsCAPI":18092,"httpsMgmt":18091},"services":null}],"nodesExt":[{"services":{"fts":8094,"ftsSSL":18094,"mgmt":8091,"moxi":0,"kv":11210,"capi":8092,"kvSSL":11207,"capiSSL":18092,"mgmtSSL":18091,"projector":9999,"indexAdmin":9100,"indexScan":9101,"indexHttp":9102,"indexStreamInit":9103,"indexStreamCatchup":9104,"indexStreamMaint":9105,"n1ql":8093,"n1qlSSL":18093,"cbas":0,"cbasSSL":0},"hostname":null,"alternateAddresses":null,"HasAlternateAddress":false}],"stats":null,"ddocs":{"uri":"/pools/default/buckets/DataBucket001/ddocs"},"nodeLocator":"vbucket","uuid":"b2e018b10f753a9e41fef9d13c0bedb2","vBucketServerMap":{"hashAlgorithm":"CRC","numReplicas":1,"serverList":["191.233.233.54:11210"],"vBucketMap":[[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1],[0,-1]],"vBucketMapForward":[]},"replicaNumber":0,"threadsNumber":0,"quota":null,"basicStats":null,"bucketCapabilitiesVer":"","bucketCapabilities":["durableWrite","couchapi","dcp","cbhello","touch","cccp","xdcrCheckpointing","nodesExt","xattr"],"rev":39,"UseSsl":false,"SurrogateHost":"191.233.233.54","Username":null,"NetworkType":"auto"}
+2020-08-04 20:22:38.137 -03:00 [INF] o2-Creating the Servers list using rev#39
+2020-08-04 20:22:38.145 -03:00 [INF] Creating node 191.233.233.54:11210 for rev#39
+2020-08-04 20:22:38.148 -03:00 [DBG] Creating CouchbaseClientHandler.
+2020-08-04 20:22:38.151 -03:00 [DBG] Creating CouchbaseClientHandler.
+2020-08-04 20:22:38.151 -03:00 [DBG] Creating CouchbaseClientHandler.
+2020-08-04 20:22:38.152 -03:00 [DBG] Creating CouchbaseClientHandler.
+2020-08-04 20:22:38.153 -03:00 [DBG] Creating CouchbaseClientHandler.
+2020-08-04 20:22:38.154 -03:00 [DBG] Creating CouchbaseClientHandler.
+2020-08-04 20:22:38.158 -03:00 [INF] Initialization succeeded for node 191.233.233.54:11210
+2020-08-04 20:22:38.166 -03:00 [INF] Creating the KeyMapper list using rev#39
+2020-08-04 20:22:38.172 -03:00 [INF] Creating VBuckets 1024 and FMaps 0 for Rev#39
+2020-08-04 20:22:38.173 -03:00 [INF] Creating VBucketMapForwards 0
+2020-08-04 20:22:38.175 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 20:22:38.181 -03:00 [DBG] Creating bucket refCount# 0
+2020-08-04 20:22:38.184 -03:00 [INF] Config updated old/new: 0, 39
+2020-08-04 20:22:40.727 -03:00 [DBG] Checking configs...
+2020-08-04 20:22:40.729 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 20:22:40.730 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 20:22:40.740 -03:00 [DBG] Sending Set`1 with key 50ebf47c-1193-4636-bce2-c47660e89c37 using server 191.233.233.54:11210
+2020-08-04 20:22:40.752 -03:00 [DBG] Sending SubDocDictUpsert`1 with key 50ebf47c-1193-4636-bce2-c47660e89c37 using server 191.233.233.54:11210
+2020-08-04 20:22:40.755 -03:00 [DBG] Sending SubDocDictUpsert`1 with key 50ebf47c-1193-4636-bce2-c47660e89c37 using server 191.233.233.54:11210
+2020-08-04 20:22:40.793 -03:00 [DBG] Operation doesn't support retries for key 50ebf47c-1193-4636-bce2-c47660e89c37
+2020-08-04 20:22:40.795 -03:00 [DBG] Operation for key 50ebf47c-1193-4636-bce2-c47660e89c37 failed after 1 retries using vb1018 from rev39 and opaque12. Reason: KV Error: {Name="KEY_ENOENT", Description="Not Found", Attributes="item-only"}
+2020-08-04 20:22:40.803 -03:00 [INF] Operation: "50ebf47c-1193-4636-bce2-c47660e89c37" - Status: Em processamento - Title: Inicio da leitura do objeto - Message: null
+2020-08-04 20:22:40.805 -03:00 [DBG] Sending SubArrayPushLast`1 with key 50ebf47c-1193-4636-bce2-c47660e89c37 using server 191.233.233.54:11210
+2020-08-04 20:22:40.811 -03:00 [DBG] Checking config with revision #39
+2020-08-04 20:22:40.812 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 20:22:40.816 -03:00 [DBG] Processing config rev#39
+2020-08-04 20:22:40.816 -03:00 [DBG] Waiting to check configs...
+2020-08-04 20:22:40.817 -03:00 [DBG] Operation Set`1 succeeded 1 for key 50ebf47c-1193-4636-bce2-c47660e89c37 : null
+2020-08-04 20:22:40.824 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 10
+2020-08-04 20:22:40.824 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 20:22:40.824 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 20:22:40.837 -03:00 [DBG] Operation SubDocDictUpsert`1 succeeded 1 for key 50ebf47c-1193-4636-bce2-c47660e89c37 : null
+2020-08-04 20:22:40.837 -03:00 [INF] Operation: "50ebf47c-1193-4636-bce2-c47660e89c37" - Status: Em andamento - Title: Objeto válido - Message: Objeto do body válido
+2020-08-04 20:22:40.839 -03:00 [DBG] Sending SubArrayPushLast`1 with key 50ebf47c-1193-4636-bce2-c47660e89c37 using server 191.233.233.54:11210
+2020-08-04 20:22:40.854 -03:00 [DBG] Operation SubArrayPushLast`1 succeeded 1 for key 50ebf47c-1193-4636-bce2-c47660e89c37 : null
+2020-08-04 20:22:40.867 -03:00 [DBG] Operation SubArrayPushLast`1 succeeded 1 for key 50ebf47c-1193-4636-bce2-c47660e89c37 : null
+2020-08-04 20:22:40.872 -03:00 [INF] Executing ObjectResult, writing value of type 'System.Guid'.
+2020-08-04 20:22:40.901 -03:00 [INF] Executed action NetCoreJobsMicroservice.Controler.OrchestratorController.PostAsync (OrchestratorAppService) in 4144.3226ms
+2020-08-04 20:22:40.902 -03:00 [INF] Executed endpoint 'NetCoreJobsMicroservice.Controler.OrchestratorController.PostAsync (OrchestratorAppService)'
+2020-08-04 20:22:40.905 -03:00 [INF] Request finished in 4332.3942ms 200 application/json; charset=utf-8
+2020-08-04 20:22:43.330 -03:00 [DBG] Checking configs...
+2020-08-04 20:22:43.331 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 20:22:43.331 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 20:22:43.385 -03:00 [DBG] Checking config with revision #39
+2020-08-04 20:22:43.385 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 20:22:43.387 -03:00 [DBG] Waiting to check configs...
+2020-08-04 20:22:43.388 -03:00 [DBG] Processing config rev#39
+2020-08-04 20:22:43.399 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 10
+2020-08-04 20:22:43.399 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 20:22:43.399 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 20:22:45.695 -03:00 [DBG] Sending SubDocDictUpsert`1 with key 50ebf47c-1193-4636-bce2-c47660e89c37 using server 191.233.233.54:11210
+2020-08-04 20:22:45.696 -03:00 [DBG] Sending SubDocDictUpsert`1 with key 50ebf47c-1193-4636-bce2-c47660e89c37 using server 191.233.233.54:11210
+2020-08-04 20:22:45.696 -03:00 [DBG] Sending SubDocDictUpsert`1 with key 50ebf47c-1193-4636-bce2-c47660e89c37 using server 191.233.233.54:11210
+2020-08-04 20:22:45.722 -03:00 [DBG] Operation SubDocDictUpsert`1 succeeded 1 for key 50ebf47c-1193-4636-bce2-c47660e89c37 : null
+2020-08-04 20:22:45.722 -03:00 [DBG] Operation SubDocDictUpsert`1 succeeded 1 for key 50ebf47c-1193-4636-bce2-c47660e89c37 : null
+2020-08-04 20:22:45.723 -03:00 [INF] Operation: "50ebf47c-1193-4636-bce2-c47660e89c37" - Status: Em processamento - Title: Contrato localizado - Message: null
+2020-08-04 20:22:45.723 -03:00 [INF] Operation: "50ebf47c-1193-4636-bce2-c47660e89c37" - Status: Em processamento - Title: Contrato ativo - Message: null
+2020-08-04 20:22:45.723 -03:00 [DBG] Sending SubArrayPushLast`1 with key 50ebf47c-1193-4636-bce2-c47660e89c37 using server 191.233.233.54:11210
+2020-08-04 20:22:45.723 -03:00 [DBG] Sending SubArrayPushLast`1 with key 50ebf47c-1193-4636-bce2-c47660e89c37 using server 191.233.233.54:11210
+2020-08-04 20:22:45.740 -03:00 [DBG] Operation SubDocDictUpsert`1 succeeded 1 for key 50ebf47c-1193-4636-bce2-c47660e89c37 : null
+2020-08-04 20:22:45.741 -03:00 [INF] Operation: "50ebf47c-1193-4636-bce2-c47660e89c37" - Status: Em processamento - Title: Inicio empresa - Message: CNPJ:38202338000107
+2020-08-04 20:22:45.741 -03:00 [DBG] Sending SubArrayPushLast`1 with key 50ebf47c-1193-4636-bce2-c47660e89c37 using server 191.233.233.54:11210
+2020-08-04 20:22:45.748 -03:00 [DBG] Operation SubArrayPushLast`1 succeeded 1 for key 50ebf47c-1193-4636-bce2-c47660e89c37 : null
+2020-08-04 20:22:45.759 -03:00 [DBG] Operation SubArrayPushLast`1 succeeded 1 for key 50ebf47c-1193-4636-bce2-c47660e89c37 : null
+2020-08-04 20:22:45.765 -03:00 [DBG] Operation SubArrayPushLast`1 succeeded 1 for key 50ebf47c-1193-4636-bce2-c47660e89c37 : null
+2020-08-04 20:22:45.896 -03:00 [DBG] Checking configs...
+2020-08-04 20:22:45.897 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 20:22:45.898 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 20:22:45.938 -03:00 [DBG] Checking config with revision #39
+2020-08-04 20:22:45.939 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 20:22:45.939 -03:00 [DBG] Waiting to check configs...
+2020-08-04 20:22:45.939 -03:00 [DBG] Processing config rev#39
+2020-08-04 20:22:45.952 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 10
+2020-08-04 20:22:45.953 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 20:22:45.953 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 20:22:48.448 -03:00 [DBG] Checking configs...
+2020-08-04 20:22:48.448 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 20:22:48.450 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 20:22:48.480 -03:00 [DBG] Checking config with revision #39
+2020-08-04 20:22:48.480 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 20:22:48.480 -03:00 [DBG] Waiting to check configs...
+2020-08-04 20:22:48.480 -03:00 [DBG] Processing config rev#39
+2020-08-04 20:22:48.485 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 10
+2020-08-04 20:22:48.485 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 20:22:48.485 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 20:23:03.430 -03:00 [DBG] Checking configs...
+2020-08-04 20:23:05.107 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 20:23:05.108 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 20:23:05.111 -03:00 [DBG] Sending SubDocDictUpsert`1 with key 50ebf47c-1193-4636-bce2-c47660e89c37 using server 191.233.233.54:11210
+2020-08-04 20:23:06.736 -03:00 [DBG] Sending SubDocDictUpsert`1 with key 50ebf47c-1193-4636-bce2-c47660e89c37 using server 191.233.233.54:11210
+2020-08-04 20:23:06.737 -03:00 [DBG] Operation SubDocDictUpsert`1 succeeded 1 for key 50ebf47c-1193-4636-bce2-c47660e89c37 : null
+2020-08-04 20:23:06.737 -03:00 [INF] Operation: "50ebf47c-1193-4636-bce2-c47660e89c37" - Status: Em processamento - Title: Empresa incluida/atualizada - Message: CNPJ:38202338000107
+2020-08-04 20:23:06.737 -03:00 [DBG] Sending SubArrayPushLast`1 with key 50ebf47c-1193-4636-bce2-c47660e89c37 using server 191.233.233.54:11210
+2020-08-04 20:23:12.468 -03:00 [DBG] Operation SubDocDictUpsert`1 succeeded 1 for key 50ebf47c-1193-4636-bce2-c47660e89c37 : null
+2020-08-04 20:23:12.468 -03:00 [INF] Operation: "50ebf47c-1193-4636-bce2-c47660e89c37" - Status: Em processamento - Title: Nenhum provedor listado - Message: CNPJ:38202338000107
+2020-08-04 20:23:12.469 -03:00 [DBG] Sending SubArrayPushLast`1 with key 50ebf47c-1193-4636-bce2-c47660e89c37 using server 191.233.233.54:11210
+2020-08-04 20:23:12.501 -03:00 [DBG] Operation SubArrayPushLast`1 succeeded 1 for key 50ebf47c-1193-4636-bce2-c47660e89c37 : null
+2020-08-04 20:23:12.502 -03:00 [DBG] Operation SubArrayPushLast`1 succeeded 1 for key 50ebf47c-1193-4636-bce2-c47660e89c37 : null
+2020-08-04 20:23:12.536 -03:00 [DBG] Checking config with revision #39
+2020-08-04 20:23:12.536 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 20:23:12.536 -03:00 [DBG] Waiting to check configs...
+2020-08-04 20:23:12.536 -03:00 [DBG] Processing config rev#39
+2020-08-04 20:23:14.464 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 10
+2020-08-04 20:23:14.465 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 20:23:14.465 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 20:23:15.051 -03:00 [DBG] Checking configs...
+2020-08-04 20:23:15.052 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 20:23:15.052 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 20:23:15.079 -03:00 [DBG] Checking config with revision #39
+2020-08-04 20:23:15.080 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 20:23:15.080 -03:00 [DBG] Waiting to check configs...
+2020-08-04 20:23:15.080 -03:00 [DBG] Processing config rev#39
+2020-08-04 20:23:15.085 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 10
+2020-08-04 20:23:15.085 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 20:23:15.085 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 20:23:17.024 -03:00 [INF] Operations that exceeded service threshold: [{"service":"kv","count":3,"top":[{"operation_name":"SubDocDictUpsert","last_operaion_id":"0x19","last_local_address":"192.168.0.34:49607","last_remote_address":"191.233.233.54:11210","last_local_id":"bab76cf6c5bd8e8a/f6763df6fb407516","last_dispatch_us":659692,"total_us":1626341,"encode_us":71,"dispatch_us":659692,"server_us":108,"decode_us":13},{"operation_name":"SubDocDictUpsert","last_operaion_id":"0x1a","last_local_address":"192.168.0.34:49609","last_remote_address":"191.233.233.54:11210","last_local_id":"bab76cf6c5bd8e8a/315881dc9cfc17fb","last_dispatch_us":5731088,"total_us":5731894,"encode_us":51,"dispatch_us":5731088,"server_us":99,"decode_us":18},{"operation_name":"SubArrayPushLast","last_operaion_id":"0x1b","last_local_address":"192.168.0.34:49607","last_remote_address":"191.233.233.54:11210","last_local_id":"bab76cf6c5bd8e8a/f6763df6fb407516","last_dispatch_us":5764118,"total_us":5764716,"encode_us":75,"dispatch_us":5764118,"server_us":91,"decode_us":17}]}]
+2020-08-04 20:23:17.581 -03:00 [DBG] Checking configs...
+2020-08-04 20:23:17.582 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 20:23:17.582 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 20:23:17.613 -03:00 [DBG] Checking config with revision #39
+2020-08-04 20:23:17.614 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 20:23:17.614 -03:00 [DBG] Waiting to check configs...
+2020-08-04 20:23:17.614 -03:00 [DBG] Processing config rev#39
+2020-08-04 20:23:17.620 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 10
+2020-08-04 20:23:17.620 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 20:23:17.620 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 20:23:21.136 -03:00 [DBG] Checking configs...
+2020-08-04 20:23:21.137 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 20:23:21.138 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 20:23:26.756 -03:00 [DBG] Sending SubDocDictUpsert`1 with key 50ebf47c-1193-4636-bce2-c47660e89c37 using server 191.233.233.54:11210
+2020-08-04 20:23:26.758 -03:00 [DBG] Checking config with revision #39
+2020-08-04 20:23:26.758 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 20:23:26.759 -03:00 [DBG] Waiting to check configs...
+2020-08-04 20:23:26.759 -03:00 [DBG] Processing config rev#39
+2020-08-04 20:23:27.302 -03:00 [DBG] Operation SubDocDictUpsert`1 succeeded 1 for key 50ebf47c-1193-4636-bce2-c47660e89c37 : null
+2020-08-04 20:23:27.303 -03:00 [INF] Operation: "50ebf47c-1193-4636-bce2-c47660e89c37" - Status: Em processamento - Title: Dados do funcionario atualizados - Message: CNPJ empresa: 38202338000107 CPF pessoa:28581084044
+2020-08-04 20:23:27.303 -03:00 [DBG] Sending SubArrayPushLast`1 with key 50ebf47c-1193-4636-bce2-c47660e89c37 using server 191.233.233.54:11210
+2020-08-04 20:23:27.329 -03:00 [DBG] Operation SubArrayPushLast`1 succeeded 1 for key 50ebf47c-1193-4636-bce2-c47660e89c37 : null
+2020-08-04 20:23:27.332 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 10
+2020-08-04 20:23:27.332 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 20:23:27.332 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 20:23:30.498 -03:00 [DBG] Checking configs...
+2020-08-04 20:23:30.498 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 20:23:30.499 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 20:23:30.568 -03:00 [DBG] Checking config with revision #39
+2020-08-04 20:23:30.568 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 20:23:30.568 -03:00 [DBG] Waiting to check configs...
+2020-08-04 20:23:30.568 -03:00 [DBG] Processing config rev#39
+2020-08-04 20:23:30.573 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 10
+2020-08-04 20:23:30.574 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 20:23:30.574 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 20:23:30.604 -03:00 [DBG] Sending SubDocDictUpsert`1 with key 50ebf47c-1193-4636-bce2-c47660e89c37 using server 191.233.233.54:11210
+2020-08-04 20:23:30.680 -03:00 [DBG] Operation SubDocDictUpsert`1 succeeded 1 for key 50ebf47c-1193-4636-bce2-c47660e89c37 : null
+2020-08-04 20:23:30.681 -03:00 [INF] Operation: "50ebf47c-1193-4636-bce2-c47660e89c37" - Status: Finalizado com erro - Title: Fim do processamento - Message: System.InvalidCastException: Unable to cast object of type 'Commons.Base.Beneficiary' to type 'BeneficiaryIn'.
+   at NetCoreJobsMicroservice.operations.ParseBeneficiaryIn(List`1 family) in C:\Projetos\HubMicroservices\NewHubMicroservices\OrchestratorAppService\operations.cs:line 719
+   at NetCoreJobsMicroservice.operations.HandleFileAsync(CustomerFull customerFull, IConfiguration config, Guid eventToken, ILogger`1 _logger, IBucket _bucket, String authorization) in C:\Projetos\HubMicroservices\NewHubMicroservices\OrchestratorAppService\operations.cs:line 417
+2020-08-04 20:23:30.681 -03:00 [DBG] Sending SubArrayPushLast`1 with key 50ebf47c-1193-4636-bce2-c47660e89c37 using server 191.233.233.54:11210
+2020-08-04 20:23:30.701 -03:00 [DBG] Operation SubArrayPushLast`1 succeeded 1 for key 50ebf47c-1193-4636-bce2-c47660e89c37 : null
+2020-08-04 20:23:33.084 -03:00 [DBG] Checking configs...
+2020-08-04 20:23:33.085 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 20:23:33.086 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 20:23:33.154 -03:00 [DBG] Checking config with revision #39
+2020-08-04 20:23:33.154 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 20:23:33.154 -03:00 [DBG] Waiting to check configs...
+2020-08-04 20:23:33.154 -03:00 [DBG] Processing config rev#39
+2020-08-04 20:23:33.160 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 10
+2020-08-04 20:23:33.160 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 20:23:33.161 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 20:23:33.391 -03:00 [INF] Request starting HTTP/2.0 POST https://localhost:44358/api/v1/Orchestrator/Customer/374f4ad4-d577-4f13-a20b-23c84c6a7990 application/json 10009
+2020-08-04 20:23:33.393 -03:00 [INF] Executing endpoint 'NetCoreJobsMicroservice.Controler.OrchestratorController.PostAsync (OrchestratorAppService)'
+2020-08-04 20:23:33.393 -03:00 [INF] Route matched with {action = "Post", controller = "Orchestrator"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Object] PostAsync(System.Guid, Commons.Base.CustomerFull) on controller NetCoreJobsMicroservice.Controler.OrchestratorController (OrchestratorAppService).
+2020-08-04 20:23:35.540 -03:00 [DBG] Sending Set`1 with key 4fcd6d96-350c-4dcb-8b07-03dc07c08e9f using server 191.233.233.54:11210
+2020-08-04 20:23:35.552 -03:00 [DBG] Sending SubDocDictUpsert`1 with key 4fcd6d96-350c-4dcb-8b07-03dc07c08e9f using server 191.233.233.54:11210
+2020-08-04 20:23:35.552 -03:00 [DBG] Sending SubDocDictUpsert`1 with key 4fcd6d96-350c-4dcb-8b07-03dc07c08e9f using server 191.233.233.54:11210
+2020-08-04 20:23:35.561 -03:00 [DBG] Operation Set`1 succeeded 1 for key 4fcd6d96-350c-4dcb-8b07-03dc07c08e9f : null
+2020-08-04 20:23:35.561 -03:00 [INF] Executing ObjectResult, writing value of type 'System.Guid'.
+2020-08-04 20:23:35.562 -03:00 [INF] Executed action NetCoreJobsMicroservice.Controler.OrchestratorController.PostAsync (OrchestratorAppService) in 2168.6046ms
+2020-08-04 20:23:35.563 -03:00 [INF] Executed endpoint 'NetCoreJobsMicroservice.Controler.OrchestratorController.PostAsync (OrchestratorAppService)'
+2020-08-04 20:23:35.563 -03:00 [INF] Request finished in 2172.177ms 200 application/json; charset=utf-8
+2020-08-04 20:23:35.597 -03:00 [DBG] Operation SubDocDictUpsert`1 succeeded 1 for key 4fcd6d96-350c-4dcb-8b07-03dc07c08e9f : null
+2020-08-04 20:23:35.597 -03:00 [INF] Operation: "4fcd6d96-350c-4dcb-8b07-03dc07c08e9f" - Status: Em processamento - Title: Inicio da leitura do objeto - Message: null
+2020-08-04 20:23:35.598 -03:00 [DBG] Sending SubArrayPushLast`1 with key 4fcd6d96-350c-4dcb-8b07-03dc07c08e9f using server 191.233.233.54:11210
+2020-08-04 20:23:35.603 -03:00 [DBG] Operation SubDocDictUpsert`1 succeeded 1 for key 4fcd6d96-350c-4dcb-8b07-03dc07c08e9f : null
+2020-08-04 20:23:35.603 -03:00 [INF] Operation: "4fcd6d96-350c-4dcb-8b07-03dc07c08e9f" - Status: Em andamento - Title: Objeto válido - Message: Objeto do body válido
+2020-08-04 20:23:35.604 -03:00 [DBG] Sending SubArrayPushLast`1 with key 4fcd6d96-350c-4dcb-8b07-03dc07c08e9f using server 191.233.233.54:11210
+2020-08-04 20:23:35.628 -03:00 [DBG] Operation SubArrayPushLast`1 succeeded 1 for key 4fcd6d96-350c-4dcb-8b07-03dc07c08e9f : null
+2020-08-04 20:23:35.628 -03:00 [DBG] Operation SubArrayPushLast`1 succeeded 1 for key 4fcd6d96-350c-4dcb-8b07-03dc07c08e9f : null
+2020-08-04 20:23:35.670 -03:00 [DBG] Checking configs...
+2020-08-04 20:23:35.670 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 20:23:35.671 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 20:23:35.709 -03:00 [DBG] Checking config with revision #39
+2020-08-04 20:23:35.710 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 20:23:35.710 -03:00 [DBG] Waiting to check configs...
+2020-08-04 20:23:35.710 -03:00 [DBG] Processing config rev#39
+2020-08-04 20:23:35.715 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 10
+2020-08-04 20:23:35.715 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 20:23:35.715 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 20:23:35.816 -03:00 [DBG] Sending SubDocDictUpsert`1 with key 4fcd6d96-350c-4dcb-8b07-03dc07c08e9f using server 191.233.233.54:11210
+2020-08-04 20:23:35.817 -03:00 [DBG] Sending SubDocDictUpsert`1 with key 4fcd6d96-350c-4dcb-8b07-03dc07c08e9f using server 191.233.233.54:11210
+2020-08-04 20:23:35.817 -03:00 [DBG] Sending SubDocDictUpsert`1 with key 4fcd6d96-350c-4dcb-8b07-03dc07c08e9f using server 191.233.233.54:11210
+2020-08-04 20:23:35.839 -03:00 [DBG] Operation SubDocDictUpsert`1 succeeded 1 for key 4fcd6d96-350c-4dcb-8b07-03dc07c08e9f : null
+2020-08-04 20:23:35.839 -03:00 [INF] Operation: "4fcd6d96-350c-4dcb-8b07-03dc07c08e9f" - Status: Em processamento - Title: Inicio empresa - Message: CNPJ:38202338000107
+2020-08-04 20:23:35.839 -03:00 [DBG] Sending SubArrayPushLast`1 with key 4fcd6d96-350c-4dcb-8b07-03dc07c08e9f using server 191.233.233.54:11210
+2020-08-04 20:23:35.857 -03:00 [DBG] Operation SubDocDictUpsert`1 succeeded 1 for key 4fcd6d96-350c-4dcb-8b07-03dc07c08e9f : null
+2020-08-04 20:23:35.858 -03:00 [INF] Operation: "4fcd6d96-350c-4dcb-8b07-03dc07c08e9f" - Status: Em processamento - Title: Contrato localizado - Message: null
+2020-08-04 20:23:35.858 -03:00 [DBG] Sending SubArrayPushLast`1 with key 4fcd6d96-350c-4dcb-8b07-03dc07c08e9f using server 191.233.233.54:11210
+2020-08-04 20:23:35.884 -03:00 [DBG] Operation SubArrayPushLast`1 succeeded 1 for key 4fcd6d96-350c-4dcb-8b07-03dc07c08e9f : null
+2020-08-04 20:23:35.884 -03:00 [DBG] Operation SubDocDictUpsert`1 succeeded 1 for key 4fcd6d96-350c-4dcb-8b07-03dc07c08e9f : null
+2020-08-04 20:23:35.885 -03:00 [INF] Operation: "4fcd6d96-350c-4dcb-8b07-03dc07c08e9f" - Status: Em processamento - Title: Contrato ativo - Message: null
+2020-08-04 20:23:35.885 -03:00 [DBG] Sending SubArrayPushLast`1 with key 4fcd6d96-350c-4dcb-8b07-03dc07c08e9f using server 191.233.233.54:11210
+2020-08-04 20:23:35.914 -03:00 [DBG] Operation SubArrayPushLast`1 succeeded 1 for key 4fcd6d96-350c-4dcb-8b07-03dc07c08e9f : null
+2020-08-04 20:23:35.915 -03:00 [DBG] Operation SubArrayPushLast`1 succeeded 1 for key 4fcd6d96-350c-4dcb-8b07-03dc07c08e9f : null
+2020-08-04 20:23:36.039 -03:00 [DBG] Sending SubDocDictUpsert`1 with key 4fcd6d96-350c-4dcb-8b07-03dc07c08e9f using server 191.233.233.54:11210
+2020-08-04 20:23:42.092 -03:00 [DBG] Checking configs...
+2020-08-04 20:23:42.092 -03:00 [DBG] Operation SubDocDictUpsert`1 succeeded 1 for key 4fcd6d96-350c-4dcb-8b07-03dc07c08e9f : null
+2020-08-04 20:23:42.093 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 20:23:42.093 -03:00 [INF] Operation: "4fcd6d96-350c-4dcb-8b07-03dc07c08e9f" - Status: Em processamento - Title: Empresa incluida/atualizada - Message: CNPJ:38202338000107
+2020-08-04 20:23:42.093 -03:00 [DBG] Sending SubArrayPushLast`1 with key 4fcd6d96-350c-4dcb-8b07-03dc07c08e9f using server 191.233.233.54:11210
+2020-08-04 20:23:42.093 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 20:23:42.688 -03:00 [DBG] Operation SubArrayPushLast`1 succeeded 1 for key 4fcd6d96-350c-4dcb-8b07-03dc07c08e9f : null
+2020-08-04 20:23:43.267 -03:00 [DBG] Checking config with revision #39
+2020-08-04 20:23:43.267 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 20:23:43.267 -03:00 [DBG] Waiting to check configs...
+2020-08-04 20:23:43.268 -03:00 [DBG] Processing config rev#39
+2020-08-04 20:23:43.276 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 10
+2020-08-04 20:23:43.276 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 20:23:43.276 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 20:23:46.002 -03:00 [DBG] Checking configs...
+2020-08-04 20:23:46.002 -03:00 [DBG] Sending SubDocDictUpsert`1 with key 4fcd6d96-350c-4dcb-8b07-03dc07c08e9f using server 191.233.233.54:11210
+2020-08-04 20:23:46.002 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 20:23:46.004 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 20:23:46.036 -03:00 [DBG] Operation SubDocDictUpsert`1 succeeded 1 for key 4fcd6d96-350c-4dcb-8b07-03dc07c08e9f : null
+2020-08-04 20:23:46.037 -03:00 [INF] Operation: "4fcd6d96-350c-4dcb-8b07-03dc07c08e9f" - Status: Em processamento - Title: Nenhum provedor listado - Message: CNPJ:38202338000107
+2020-08-04 20:23:46.038 -03:00 [DBG] Sending SubArrayPushLast`1 with key 4fcd6d96-350c-4dcb-8b07-03dc07c08e9f using server 191.233.233.54:11210
+2020-08-04 20:23:46.067 -03:00 [DBG] Operation SubArrayPushLast`1 succeeded 1 for key 4fcd6d96-350c-4dcb-8b07-03dc07c08e9f : null
+2020-08-04 20:23:54.751 -03:00 [INF] Operations that exceeded service threshold: [{"service":"kv","count":3,"top":[{"operation_name":"SubArrayPushLast","last_operaion_id":"0x34","last_local_address":"192.168.0.34:49607","last_remote_address":"191.233.233.54:11210","last_local_id":"bab76cf6c5bd8e8a/f6763df6fb407516","last_dispatch_us":594559,"total_us":596126,"encode_us":97,"dispatch_us":594559,"server_us":144,"decode_us":23},{"operation_name":"SubDocDictUpsert","last_operaion_id":"0x20","last_local_address":"192.168.0.34:49609","last_remote_address":"191.233.233.54:11210","last_local_id":"bab76cf6c5bd8e8a/315881dc9cfc17fb","last_dispatch_us":544772,"total_us":547362,"encode_us":67,"dispatch_us":544772,"server_us":99,"decode_us":22},{"operation_name":"SubDocDictUpsert","last_operaion_id":"0x32","last_local_address":"192.168.0.34:49609","last_remote_address":"191.233.233.54:11210","last_local_id":"bab76cf6c5bd8e8a/315881dc9cfc17fb","last_dispatch_us":6052586,"total_us":6053520,"encode_us":56,"dispatch_us":6052586,"server_us":76,"decode_us":25}]}]
+2020-08-04 20:24:03.989 -03:00 [DBG] Checking config with revision #39
+2020-08-04 20:24:03.989 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 20:24:03.990 -03:00 [DBG] Waiting to check configs...
+2020-08-04 20:24:03.990 -03:00 [DBG] Processing config rev#39
+2020-08-04 20:24:03.998 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 10
+2020-08-04 20:24:03.998 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 20:24:03.998 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 20:24:05.273 -03:00 [INF] Operations that exceeded service threshold: [{"service":"kv","count":1,"top":[{"operation_name":"SubDocDictUpsert","last_operaion_id":"0x35","last_local_address":"192.168.0.34:49607","last_remote_address":"191.233.233.54:11210","last_local_id":"bab76cf6c5bd8e8a/f6763df6fb407516","last_dispatch_us":33617,"total_us":2180398,"encode_us":92,"dispatch_us":33617,"server_us":126,"decode_us":15}]}]
+2020-08-04 20:24:10.695 -03:00 [DBG] Checking configs...
+2020-08-04 20:24:10.695 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 20:24:10.696 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 20:24:16.956 -03:00 [DBG] Sending SubDocDictUpsert`1 with key 4fcd6d96-350c-4dcb-8b07-03dc07c08e9f using server 191.233.233.54:11210
+2020-08-04 20:24:21.962 -03:00 [DBG] Operation SubDocDictUpsert`1 succeeded 1 for key 4fcd6d96-350c-4dcb-8b07-03dc07c08e9f : null
+2020-08-04 20:24:21.962 -03:00 [INF] Operation: "4fcd6d96-350c-4dcb-8b07-03dc07c08e9f" - Status: Em processamento - Title: Dados do funcionario atualizados - Message: CNPJ empresa: 38202338000107 CPF pessoa:28581084044
+2020-08-04 20:24:21.968 -03:00 [DBG] Sending SubArrayPushLast`1 with key 4fcd6d96-350c-4dcb-8b07-03dc07c08e9f using server 191.233.233.54:11210
+2020-08-04 20:24:22.499 -03:00 [DBG] Operation SubArrayPushLast`1 succeeded 1 for key 4fcd6d96-350c-4dcb-8b07-03dc07c08e9f : null
+2020-08-04 20:24:23.580 -03:00 [DBG] Checking config with revision #39
+2020-08-04 20:24:23.581 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 20:24:23.581 -03:00 [DBG] Processing config rev#39
+2020-08-04 20:24:23.581 -03:00 [DBG] Waiting to check configs...
+2020-08-04 20:24:46.045 -03:00 [DBG] 1. Checking config [DataBucket001] with rev#39 on thread 10
+2020-08-04 20:24:46.054 -03:00 [DBG] Checking configs...
+2020-08-04 20:24:46.054 -03:00 [INF] Ignoring config with rev#39
+2020-08-04 20:24:46.080 -03:00 [DBG] Using index 0 - server Couchbase.Core.Server
+2020-08-04 20:24:46.115 -03:00 [DBG] Current cluster nodes: System.Linq.Enumerable+SelectListIterator`2[Couchbase.Core.IServer,System.String]
+2020-08-04 20:24:46.118 -03:00 [DBG] Sending Config with key  using server 191.233.233.54:11210
+2020-08-04 20:24:46.246 -03:00 [INF] Operations that exceeded service threshold: [{"service":"kv","count":2,"top":[{"operation_name":"SubArrayPushLast","last_operaion_id":"0x3a","last_local_address":"192.168.0.34:49609","last_remote_address":"191.233.233.54:11210","last_local_id":"bab76cf6c5bd8e8a/315881dc9cfc17fb","last_dispatch_us":530391,"total_us":531659,"encode_us":94,"dispatch_us":530391,"server_us":144,"decode_us":19},{"operation_name":"SubDocDictUpsert","last_operaion_id":"0x39","last_local_address":"192.168.0.34:49607","last_remote_address":"191.233.233.54:11210","last_local_id":"bab76cf6c5bd8e8a/f6763df6fb407516","last_dispatch_us":5003927,"total_us":5005668,"encode_us":60,"dispatch_us":5003927,"server_us":117,"decode_us":22}]}]
+2020-08-04 20:24:50.025 -03:00 [DBG] Checking config with revision #39
+2020-08-04 20:24:50.680 -03:00 [DBG] Queueing config rev#39 for [DataBucket001].
+2020-08-04 20:24:50.682 -03:00 [DBG] Processing config rev#39
+2020-08-04 20:24:50.682 -03:00 [DBG] Waiting to check configs...

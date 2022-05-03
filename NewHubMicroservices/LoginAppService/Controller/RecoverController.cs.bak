@@ -1,0 +1,76 @@
+﻿using LoginAppService.Models;
+using LoginAppService.Services.Interfaces;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace LoginAppService.Controllers
+{
+    [Route("api/v1/[controller]")]
+    [ApiController]
+    public class RecoverController : ControllerBase
+    {
+        private readonly IRecoverPasswordService _recoverPasswordService;
+
+        public RecoverController(IRecoverPasswordService recoverPasswordService)
+        {
+            _recoverPasswordService = recoverPasswordService;
+        }
+
+        [HttpGet]
+        public object Get()
+        {
+            var ret = new RecoverPassword.RequestModel();
+            return Ok(ret);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> RequestRecoverAsync(RecoverPassword.RequestModel userData)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    if (await _recoverPasswordService.SendRecoverAsync(userData))
+                        return Ok("Enviado");
+
+                    return BadRequest("Nao foi possivel enviar o email");
+                }
+                else
+                {
+                    var errors = ModelState.Values.SelectMany(v => v.Errors);
+                    return BadRequest(JsonConvert.SerializeObject(errors));
+                }
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
+        }
+
+        [HttpPut("change")]
+        public async Task<IActionResult> ChangePasswordAsync(RecoverPassword.ChangePasswordModel newPassword)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    if (await _recoverPasswordService.ChangePasswordAsync(newPassword))
+                        return Ok("As informaçoes foram atualizadas");
+
+                    return BadRequest("Ocorreu um problema ao tentar atualizar os dados do usuario");
+                }
+                else
+                {
+                    var errors = ModelState.Values.SelectMany(v => v.Errors);
+                    return BadRequest(JsonConvert.SerializeObject(errors));
+                }
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
+        }
+    }
+}

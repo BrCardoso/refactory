@@ -1,0 +1,86 @@
+2020-06-10 12:13:21.680 -03:00 [INF] User profile is available. Using 'C:\Users\Bruna Cardoso\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-06-10 12:13:24.162 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-06-10 12:13:24.164 -03:00 [INF] Hosting environment: Development
+2020-06-10 12:13:24.165 -03:00 [INF] Content root path: C:\Users\Bruna Cardoso\OneDrive\PROJETOS\HUB\NovaEstrutura\OrchestratorAppService
+2020-06-10 12:13:24.368 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44358/  
+2020-06-10 12:13:24.518 -03:00 [INF] Executing endpoint '/ HTTP: GET'
+2020-06-10 12:13:24.695 -03:00 [INF] Executed endpoint '/ HTTP: GET'
+2020-06-10 12:13:24.704 -03:00 [INF] Request finished in 369.0438ms 200 
+2020-06-10 12:13:24.940 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44358/favicon.ico  
+2020-06-10 12:13:24.981 -03:00 [INF] Request finished in 40.6693ms 404 
+2020-06-10 12:25:08.296 -03:00 [INF] User profile is available. Using 'C:\Users\Bruna Cardoso\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-06-10 12:25:10.297 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-06-10 12:25:10.298 -03:00 [INF] Hosting environment: Development
+2020-06-10 12:25:10.298 -03:00 [INF] Content root path: C:\Users\Bruna Cardoso\OneDrive\PROJETOS\HUB\NovaEstrutura\OrchestratorAppService
+2020-06-10 12:25:10.510 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44358/  
+2020-06-10 12:25:10.629 -03:00 [INF] Executing endpoint '/ HTTP: GET'
+2020-06-10 12:25:10.699 -03:00 [INF] Executed endpoint '/ HTTP: GET'
+2020-06-10 12:25:10.707 -03:00 [INF] Request finished in 210.3814ms 200 
+2020-06-10 13:06:49.625 -03:00 [INF] User profile is available. Using 'C:\Users\Bruna Cardoso\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-06-10 13:06:51.381 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-06-10 13:06:51.382 -03:00 [INF] Hosting environment: Development
+2020-06-10 13:06:51.383 -03:00 [INF] Content root path: C:\Users\Bruna Cardoso\OneDrive\PROJETOS\HUB\NovaEstrutura\OrchestratorAppService
+2020-06-10 13:06:51.541 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44358/  
+2020-06-10 13:06:51.652 -03:00 [INF] Executing endpoint '/ HTTP: GET'
+2020-06-10 13:06:51.722 -03:00 [INF] Executed endpoint '/ HTTP: GET'
+2020-06-10 13:06:51.731 -03:00 [INF] Request finished in 197.7345ms 200 
+2020-06-10 13:44:17.395 -03:00 [INF] User profile is available. Using 'C:\Users\Bruna Cardoso\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-06-10 13:44:24.155 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-06-10 13:44:24.157 -03:00 [INF] Hosting environment: Development
+2020-06-10 13:44:24.158 -03:00 [INF] Content root path: C:\Users\Bruna Cardoso\OneDrive\PROJETOS\HUB\NovaEstrutura\OrchestratorAppService
+2020-06-10 13:44:24.607 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44358/  
+2020-06-10 13:44:24.754 -03:00 [INF] Executing endpoint '/ HTTP: GET'
+2020-06-10 13:44:24.898 -03:00 [INF] Executed endpoint '/ HTTP: GET'
+2020-06-10 13:44:24.906 -03:00 [INF] Request finished in 308.5992ms 200 
+2020-06-10 13:44:25.366 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44358/favicon.ico  
+2020-06-10 13:44:25.482 -03:00 [INF] Request finished in 118.4539ms 404 
+2020-06-10 14:03:53.741 -03:00 [INF] User profile is available. Using 'C:\Users\Bruna Cardoso\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-06-10 14:03:55.702 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-06-10 14:03:55.704 -03:00 [INF] Hosting environment: Development
+2020-06-10 14:03:55.705 -03:00 [INF] Content root path: C:\Users\Bruna Cardoso\OneDrive\PROJETOS\HUB\NovaEstrutura\OrchestratorAppService
+2020-06-10 14:03:55.819 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44358/  
+2020-06-10 14:03:55.882 -03:00 [INF] Executing endpoint '/ HTTP: GET'
+2020-06-10 14:03:55.920 -03:00 [INF] Executed endpoint '/ HTTP: GET'
+2020-06-10 14:03:55.926 -03:00 [INF] Request finished in 116.2075ms 200 
+2020-06-10 14:37:04.234 -03:00 [INF] User profile is available. Using 'C:\Users\Bruna Cardoso\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-06-10 14:37:05.939 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-06-10 14:37:05.945 -03:00 [INF] Hosting environment: Development
+2020-06-10 14:37:05.975 -03:00 [INF] Content root path: C:\Users\Bruna Cardoso\OneDrive\PROJETOS\HUB\NovaEstrutura\OrchestratorAppService
+2020-06-10 14:37:06.165 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44358/  
+2020-06-10 14:37:06.280 -03:00 [INF] Executing endpoint '/ HTTP: GET'
+2020-06-10 14:37:06.371 -03:00 [INF] Executed endpoint '/ HTTP: GET'
+2020-06-10 14:37:06.386 -03:00 [INF] Request finished in 234.3435ms 200 
+2020-06-10 14:41:44.052 -03:00 [INF] User profile is available. Using 'C:\Users\Bruna Cardoso\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-06-10 14:41:49.015 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-06-10 14:41:49.017 -03:00 [INF] Hosting environment: Development
+2020-06-10 14:41:49.018 -03:00 [INF] Content root path: C:\Users\Bruna Cardoso\OneDrive\PROJETOS\HUB\NovaEstrutura\OrchestratorAppService
+2020-06-10 14:41:49.532 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44358/  
+2020-06-10 14:41:49.720 -03:00 [INF] Executing endpoint '/ HTTP: GET'
+2020-06-10 14:41:50.382 -03:00 [INF] Executed endpoint '/ HTTP: GET'
+2020-06-10 14:41:50.398 -03:00 [INF] Request finished in 868.6477ms 200 
+2020-06-10 14:52:45.675 -03:00 [INF] User profile is available. Using 'C:\Users\Bruna Cardoso\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-06-10 14:52:51.315 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-06-10 14:52:51.340 -03:00 [INF] Hosting environment: Development
+2020-06-10 14:52:51.341 -03:00 [INF] Content root path: C:\Users\Bruna Cardoso\OneDrive\PROJETOS\HUB\NovaEstrutura\OrchestratorAppService
+2020-06-10 14:52:51.515 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44358/  
+2020-06-10 14:52:51.602 -03:00 [INF] Executing endpoint '/ HTTP: GET'
+2020-06-10 14:52:51.656 -03:00 [INF] Executed endpoint '/ HTTP: GET'
+2020-06-10 14:52:51.661 -03:00 [INF] Request finished in 156.792ms 200 
+2020-06-10 15:02:23.173 -03:00 [INF] User profile is available. Using 'C:\Users\Bruna Cardoso\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-06-10 15:02:25.159 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-06-10 15:02:25.161 -03:00 [INF] Hosting environment: Development
+2020-06-10 15:02:25.162 -03:00 [INF] Content root path: C:\Users\Bruna Cardoso\OneDrive\PROJETOS\HUB\NovaEstrutura\OrchestratorAppService
+2020-06-10 15:02:25.709 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44358/  
+2020-06-10 15:02:25.848 -03:00 [INF] Executing endpoint '/ HTTP: GET'
+2020-06-10 15:02:26.072 -03:00 [INF] Executed endpoint '/ HTTP: GET'
+2020-06-10 15:02:26.082 -03:00 [INF] Request finished in 385.3967ms 200 
+2020-06-10 17:34:05.081 -03:00 [INF] User profile is available. Using 'C:\Users\Bruna Cardoso\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-06-10 17:34:06.773 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-06-10 17:34:06.774 -03:00 [INF] Hosting environment: Development
+2020-06-10 17:34:06.775 -03:00 [INF] Content root path: C:\Users\Bruna Cardoso\OneDrive\PROJETOS\HUB\NovaEstrutura\OrchestratorAppService
+2020-06-10 17:34:06.871 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44358/  
+2020-06-10 17:34:06.948 -03:00 [INF] Executing endpoint '/ HTTP: GET'
+2020-06-10 17:34:06.990 -03:00 [INF] Executed endpoint '/ HTTP: GET'
+2020-06-10 17:34:06.997 -03:00 [INF] Request finished in 134.1223ms 200 
+2020-06-10 17:34:07.199 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44358/favicon.ico  
+2020-06-10 17:34:07.222 -03:00 [INF] Request finished in 23.6346ms 404 

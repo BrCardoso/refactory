@@ -1,0 +1,10 @@
+2020-06-17 13:11:57.978 -03:00 [INF] User profile is available. Using 'C:\Users\Bruna Cardoso\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-06-17 13:12:02.014 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-06-17 13:12:02.015 -03:00 [INF] Hosting environment: Development
+2020-06-17 13:12:02.017 -03:00 [INF] Content root path: C:\Users\Bruna Cardoso\OneDrive\PROJETOS\HUB\NovaEstrutura\OrchestratorAppService
+2020-06-17 13:12:02.187 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44358/  
+2020-06-17 13:12:02.262 -03:00 [INF] Executing endpoint '/ HTTP: GET'
+2020-06-17 13:12:02.321 -03:00 [INF] Executed endpoint '/ HTTP: GET'
+2020-06-17 13:12:02.328 -03:00 [INF] Request finished in 151.4694ms 200 
+2020-06-17 13:12:02.469 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44358/favicon.ico  
+2020-06-17 13:12:02.499 -03:00 [INF] Request finished in 30.2193ms 404 

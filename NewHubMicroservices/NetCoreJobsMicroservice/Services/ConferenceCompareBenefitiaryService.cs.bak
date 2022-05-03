@@ -1,0 +1,183 @@
+using NetCoreJobsMicroservice.Models;
+using NetCoreJobsMicroservice.Services.Interfaces;
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace NetCoreJobsMicroservice.Services
+{
+	public class ConferenceCompareBenefitiaryService : IConferenceCompareBenefitiaryService
+	{
+		public void FindBenefitiaries(IEnumerable<FamilyHub> familiesDB, ConferenceDB.Conference<ConferenceDB.Error> conference)
+		{
+			conference.invoiceDetails.All(benefitiary =>
+			{
+				benefitiary.Provider = new ConferenceDB.InvoiceDetail<ConferenceDB.Error>.ProviderValue
+				{
+					birthdate = benefitiary.birthdate,
+					cardnumber = benefitiary.cardnumber,
+					contract = benefitiary.contract,
+					cpf = benefitiary.cpf,
+					name = benefitiary.name,
+					productcode = benefitiary.productcode,
+					value = benefitiary.value
+				};
+
+				var currentMember = new FamilyHub.Member();
+				if (familiesDB.Any(families => families.members.Any(member => member.benefitinfos.Any(benefity =>
+				{
+					if (benefity.cardnumber == benefitiary.cardnumber && benefity.providerguid == conference.providerguid)
+					{
+						currentMember = member;
+						return true;
+					}
+
+					return false;
+				}))))
+				{
+					FillHubValuesAsync(benefitiary, currentMember, conference.providerguid);
+					return true;
+				}
+
+				if (familiesDB.Any(families => families.members.Any(member =>
+				{
+					if (member.birthdate.ToShortDateString() == benefitiary.birthdate.ToShortDateString() && member.cpf == benefitiary.cpf && member.benefitinfos.Any(x => x.providerguid == conference.providerguid))
+					{
+						currentMember = member;
+						return true;
+					}
+
+					return false;
+				})))
+				{
+					FillHubValuesAsync(benefitiary, currentMember, conference.providerguid);
+					return true;
+				}
+
+				if (familiesDB.Any(families => families.members.Any(member =>
+				{
+					if (member.name == benefitiary.name && member.benefitinfos.Any(x => x.providerguid == conference.providerguid) && (member.birthdate.ToShortDateString() == benefitiary.birthdate.ToShortDateString() || member.cpf == benefitiary.cpf))
+					{
+						currentMember = member;
+						return true;
+					}
+
+					return false;
+				})))
+				{
+					FillHubValuesAsync(benefitiary, currentMember, conference.providerguid);
+					return true;
+				}
+
+				if (familiesDB.Any(families => families.members.Any(member =>
+				{
+					if (member.name == benefitiary.name && families.members.Count(m => m.name == member.name) == 1 && member.benefitinfos.Any(x => x.providerguid == conference.providerguid))
+					{
+						currentMember = member;
+						return true;
+					}
+
+					return false;
+				})))
+				{
+					FillHubValuesAsync(benefitiary, currentMember, conference.providerguid);
+					return true;
+				}
+
+				benefitiary.Provider = null;
+
+				return true;
+			});
+		}
+
+		public void FindBenefitiary(FamilyHub family, ConferenceDB.InvoiceDetail<ConferenceDB.Error> benefitiary, Guid providerguid)
+		{
+			benefitiary.Provider = new ConferenceDB.InvoiceDetail<ConferenceDB.Error>.ProviderValue
+			{
+				birthdate = benefitiary.birthdate,
+				cardnumber = benefitiary.cardnumber,
+				contract = benefitiary.contract,
+				cpf = benefitiary.cpf,
+				name = benefitiary.name,
+				productcode = benefitiary.productcode,
+				value = benefitiary.value
+			};
+
+			var currentMember = new FamilyHub.Member();
+			if (family.members.Any(member => member.benefitinfos.Any(benefity =>
+			{
+				if (benefity.cardnumber == benefitiary.cardnumber && benefity.providerguid == providerguid)
+				{
+					currentMember = member;
+					return true;
+				}
+
+				return false;
+			})))
+			{
+				FillHubValuesAsync(benefitiary, currentMember, providerguid);
+				return;
+			}
+
+			if (family.members.Any(member =>
+			{
+				if (member.birthdate.ToShortDateString() == benefitiary.birthdate.ToShortDateString() && member.cpf == benefitiary.cpf && member.benefitinfos.Any(x => x.providerguid == providerguid))
+				{
+					currentMember = member;
+					return true;
+				}
+
+				return false;
+			}))
+			{
+				FillHubValuesAsync(benefitiary, currentMember, providerguid);
+				return;
+			}
+
+			if (family.members.Any(member =>
+			{
+				if (member.name == benefitiary.name && member.benefitinfos.Any(x => x.providerguid == providerguid) && (member.birthdate.ToShortDateString() == benefitiary.birthdate.ToShortDateString() || member.cpf == benefitiary.cpf))
+				{
+					currentMember = member;
+					return true;
+				}
+
+				return false;
+			}))
+			{
+				FillHubValuesAsync(benefitiary, currentMember, providerguid);
+				return;
+			}
+
+			if (family.members.Any(member =>
+			{
+				if (member.name == benefitiary.name && family.members.Count(m => m.name == member.name) == 1 && member.benefitinfos.Any(x => x.providerguid == providerguid))
+				{
+					currentMember = member;
+					return true;
+				}
+
+				return false;
+			}))
+			{
+				FillHubValuesAsync(benefitiary, currentMember, providerguid);
+				return;
+			}
+
+			//Caso nao encontre o cara, ja atribui nulo para a prop auxiliar que guarda as informaçoes que veio na nota.
+			benefitiary.Provider = null;
+		}
+
+		private void FillHubValuesAsync(ConferenceDB.InvoiceDetail<ConferenceDB.Error> benefitiary, FamilyHub.Member benefitiaryHub, Guid providerguid)
+		{
+			benefitiary.birthdate = benefitiaryHub.birthdate;
+			benefitiary.contract = benefitiaryHub.benefitinfos.FirstOrDefault(x => x.providerguid == providerguid)?.contractnumber;
+			var benefitinfo = benefitiaryHub.benefitinfos.SingleOrDefault(x => x.providerguid == providerguid && benefitiary.contract == x.contractnumber);
+			benefitiary.cardnumber = benefitinfo.cardnumber;
+			benefitiary.cpf = benefitiaryHub.cpf;
+			benefitiary.name = benefitiaryHub.name;
+			benefitiary.productcode = benefitiaryHub.benefitinfos.FirstOrDefault(x => x.providerguid == providerguid && benefitiary.contract == x.contractnumber && x.cardnumber == benefitiary.cardnumber)?.productcode;
+		}
+	}
+}

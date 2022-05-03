@@ -1,0 +1,24 @@
+2020-07-31 11:14:46.040 -03:00 [INF] User profile is available. Using 'C:\Users\Bruna Cardoso\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-07-31 11:14:47.591 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-07-31 11:14:47.592 -03:00 [INF] Hosting environment: Development
+2020-07-31 11:14:47.592 -03:00 [INF] Content root path: C:\Users\Bruna Cardoso\OneDrive\PROJETOS\HUB\newhubmicroservices\OrchestratorAppService
+2020-07-31 11:14:47.715 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44358/  
+2020-07-31 11:14:47.715 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44358/  
+2020-07-31 11:14:47.782 -03:00 [INF] Executing endpoint '/ HTTP: GET'
+2020-07-31 11:14:47.782 -03:00 [INF] Executing endpoint '/ HTTP: GET'
+2020-07-31 11:14:47.833 -03:00 [INF] Executed endpoint '/ HTTP: GET'
+2020-07-31 11:14:47.833 -03:00 [INF] Executed endpoint '/ HTTP: GET'
+2020-07-31 11:14:47.840 -03:00 [INF] Request finished in 131.0328ms 200 
+2020-07-31 11:14:47.840 -03:00 [INF] Request finished in 131.035ms 200 
+2020-07-31 11:14:47.961 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44358/favicon.ico  
+2020-07-31 11:14:47.981 -03:00 [INF] Request finished in 20.1171ms 404 
+2020-07-31 11:14:47.985 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44358/favicon.ico  
+2020-07-31 11:14:47.986 -03:00 [INF] Request finished in 0.7803ms 404 
+2020-07-31 11:28:53.832 -03:00 [INF] User profile is available. Using 'C:\Users\Bruna Cardoso\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-07-31 11:28:55.762 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-07-31 11:28:55.764 -03:00 [INF] Hosting environment: Development
+2020-07-31 11:28:55.764 -03:00 [INF] Content root path: C:\Users\Bruna Cardoso\OneDrive\PROJETOS\HUB\newhubmicroservices\OrchestratorAppService
+2020-07-31 11:28:56.079 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44358/  
+2020-07-31 11:28:56.214 -03:00 [INF] Executing endpoint '/ HTTP: GET'
+2020-07-31 11:28:56.328 -03:00 [INF] Executed endpoint '/ HTTP: GET'
+2020-07-31 11:28:56.335 -03:00 [INF] Request finished in 282.5915ms 200 

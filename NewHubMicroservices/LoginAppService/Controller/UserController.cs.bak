@@ -1,0 +1,235 @@
+﻿using Commons;
+using LoginAppService.Converters;
+using LoginAppService.Models;
+using LoginAppService.Services.Interfaces;
+
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
+
+namespace LoginAppService.Controllers
+{
+    [Route("api/v1/[controller]")]
+    [ApiController]
+    public class UserController : ControllerBase
+    {
+        private readonly IUserService _userService;
+        private readonly IConfiguration _config;
+        private readonly IRecoverPasswordService _recoverPasswordService;
+
+        public UserController(IUserService userService, IConfiguration configu, IRecoverPasswordService recoverPasswordService)
+        {
+            _userService = userService;
+            _config = configu;
+            _recoverPasswordService = recoverPasswordService;
+        }
+
+        [HttpGet("Customer/{token}")]
+        public async Task<IActionResult> GetDataAsync(Guid token)
+        {
+            string aggregator = Request.GetHeader("aggregator"); string Authorization = Request.GetHeader("Authorization"); string refresh_token = Request.GetHeader("refresh_token");
+            var validateUser = await Helpers.Valida(Request.HttpContext.Connection.RemoteIpAddress, Authorization, refresh_token, aggregator, _config);
+            if (!validateUser.Success)
+                return StatusCode(validateUser.HttpStatusCode, validateUser.Message);
+            HttpContext.Response.Headers.Add("refresh_token", validateUser.Message);
+
+
+            if (!(GetUserClaimsFromToken() is IEnumerable<Claim> claims))
+                return BadRequest("INVALID_TOKEN");
+
+            string email = claims.FirstOrDefault(x => x.Type == "sub").Value;
+
+            if (!(await _userService.GetUsersInfoAsync() is UserData.Resource users))
+                return BadRequest("USERS_NOT_FOUND_OR_PROBLEM");
+
+            UserData.Data user = users.Resources.FirstOrDefault(x => x.emails.Contains(email));
+            if (!(user is UserData.Data))
+                return BadRequest("USERS_USER_NOT_FOUND");
+
+            return Ok(user);
+        }
+
+        [HttpGet("Customer/{token}/tree")]
+        public async Task<IActionResult> GetAllSinglesAsync(Guid token)
+        {
+            string aggregator = Request.GetHeader("aggregator"); string Authorization = Request.GetHeader("Authorization"); string refresh_token = Request.GetHeader("refresh_token");
+            var validateUser = await Helpers.Valida(Request.HttpContext.Connection.RemoteIpAddress, Authorization, refresh_token, aggregator, _config);
+            if (!validateUser.Success)
+                return StatusCode(validateUser.HttpStatusCode, validateUser.Message);
+            HttpContext.Response.Headers.Add("refresh_token", validateUser.Message);
+
+            if (!(GetUserClaimsFromToken() is IEnumerable<Claim> claims))
+                return BadRequest("INVALID_TOKEN");
+
+            if (!(await _userService.GetUsersInfoAsync() is UserData.Resource users))
+                return BadRequest("USERS_NOT_FOUND_OR_PROBLEM");
+
+            var usersFiltered = GetUsersFromAccessLevel(users.Resources, claims);
+
+            return Ok(usersFiltered);
+        }
+
+        [HttpPut("Customer/{token}")]
+        public async Task<IActionResult> UpdateDataAsync(Guid token, [FromBody] UpdateUser.UpdateData newUserData)
+        {
+            string aggregator = Request.GetHeader("aggregator"); string Authorization = Request.GetHeader("Authorization"); string refresh_token = Request.GetHeader("refresh_token");
+
+            var validateUser = await Helpers.Valida(Request.HttpContext.Connection.RemoteIpAddress, Authorization, refresh_token, aggregator, _config);
+            if (!validateUser.Success)
+                return StatusCode(validateUser.HttpStatusCode, validateUser.Message);
+            HttpContext.Response.Headers.Add("refresh_token", validateUser.Message);
+
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState.Values.SelectMany(v => v.Errors);
+                return BadRequest(JsonConvert.SerializeObject(errors));
+            }
+
+            if (!(GetUserClaimsFromToken() is IEnumerable<Claim> claims))
+                return BadRequest("INVALID_TOKEN");
+
+            string userId = claims.FirstOrDefault(x => x.Type == "userid").Value;
+            string email = claims.FirstOrDefault(x => x.Type == "sub").Value;
+
+            if (!(await _userService.GetUsersInfoAsync() is UserData.Resource users))
+                return BadRequest("USERS_NOT_FOUND_OR_PROBLEM");
+
+            UserData.Data user = users.Resources.FirstOrDefault(x => x.emails.Contains(email));
+            if (!(user is UserData.Data))
+                return BadRequest("USER_NOT_FOUND");
+
+            bool result = await _userService.UpdateUserDataAsync(userId, UserDataToUpdateDataConverter.Parse(user, newUserData));
+            if (!result)
+                return BadRequest("USER_NOT_UPDATED");
+
+            return Ok("USER_SUCCESSFULLY_UPDATED");
+        }
+
+        [HttpPut("Customer/{token}/tree")]
+        public async Task<IActionResult> UpdateSingleDataAsync(Guid token,[FromBody] UpdateUser.UpdateSingleData newSingleUserData)
+        {
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState.Values.SelectMany(v => v.Errors);
+                return BadRequest(JsonConvert.SerializeObject(errors));
+            }
+
+            if (!(GetUserClaimsFromToken() is IEnumerable<Claim> claims))
+                return BadRequest("INVALID_TOKEN");
+
+            if (!(await _userService.GetUsersInfoAsync() is UserData.Resource users))
+                return BadRequest("USERS_NOT_FOUND_OR_PROBLEM");
+
+            var usersFiltered = GetUsersFromAccessLevel(users.Resources, claims);
+
+            UserData.Data user = usersFiltered.FirstOrDefault(x => x.id == newSingleUserData.guid);
+            if (!(user is UserData.Data))
+                return BadRequest("USERS_USER_NOT_FOUND_OR_NOT_PERM");
+
+            bool result = await _userService.UpdateUserDataAsync(newSingleUserData.guid, UserDataToUpdateDataConverter.Parse(newSingleUserData));
+            if (!result)
+                return BadRequest("USERS_USER_NOT_UPDATED");
+
+            return Ok("USERS_USER_SUCCESSFULLY_UPDATED");
+
+        }
+
+        [HttpPost("Customer/{token}/tree")]
+        public async Task<IActionResult> CreateSingleAsync(Guid token,[FromBody] UpdateUser.Data newSingleUser)
+        {
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState.Values.SelectMany(v => v.Errors);
+                return BadRequest(JsonConvert.SerializeObject(errors));
+            }
+
+            if (!(GetUserClaimsFromToken() is IEnumerable<Claim> claims))
+                return BadRequest("INVALID_TOKEN");
+
+            string approveNewLogins = claims.FirstOrDefault(x => x.Type == "approveNewLogins").Value;
+            if (approveNewLogins.ToUpper() != "TRUE")
+                return BadRequest("USER_NOT_HAVE_PERM_TO_ADD");
+
+            if (!(await _userService.GetUsersInfoAsync() is UserData.Resource users))
+                return BadRequest("USERS_NOT_FOUND_OR_PROBLEM");
+
+            if (users.Resources.Any(x => x.userName == newSingleUser.userName))
+                return BadRequest("USER_ALREADY_EXISTS_USERNAME");
+
+            newSingleUser.password = Guid.NewGuid().ToString().Substring(0, 30);
+
+            if (!(await _userService.CreateUserDataAsync(newSingleUser) is UserData.Data addedUser))
+                return BadRequest("USER_NOT_CREATED");
+
+            await _recoverPasswordService.SendRecoverAsync(new RecoverPassword.RequestModel { Email = newSingleUser.userName.Replace("HUB/", "") });
+
+            return Ok(addedUser);
+
+        }
+
+        [HttpDelete("Customer/{token}/User/{guid}")]
+        public async Task<IActionResult> DeleteUserAsync(Guid token, [Required] string guid)
+        {
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState.Values.SelectMany(v => v.Errors);
+                return BadRequest(JsonConvert.SerializeObject(errors));
+            }
+
+            if (!(GetUserClaimsFromToken() is IEnumerable<Claim> claims))
+                return BadRequest("INVALID_TOKEN");
+
+            if (!(await _userService.GetUsersInfoAsync() is UserData.Resource users))
+                return BadRequest("USERS_NOT_FOUND_OR_PROBLEM");
+
+            var usersFiltered = GetUsersFromAccessLevel(users.Resources, claims);
+
+            UserData.Data user = usersFiltered.FirstOrDefault(x => x.id == guid);
+            if (!(user is UserData.Data))
+                return BadRequest("USERS_USER_NOT_FOUND_OR_NOT_PERM");
+
+            if (!await _userService.DeleteUserAsync(guid))
+                return BadRequest("USERS_USER_NOT_DELETED");
+
+            return NoContent();
+
+        }
+
+        private IEnumerable<Claim> GetUserClaimsFromToken()
+        {
+            try
+            {
+                string token = Request.Headers["Authorization"].ToString().Replace("Bearer ", "");
+
+                var handlerToken = new JwtSecurityTokenHandler();
+
+                var jwt = handlerToken.ReadToken(token) as JwtSecurityToken;
+
+                return jwt.Claims;
+            }
+            catch
+            { return null; }
+        }
+
+        private IEnumerable<UserData.Data> GetUsersFromAccessLevel(IEnumerable<UserData.Data> users, IEnumerable<Claim> claims)
+        {
+            string cnpj = claims.FirstOrDefault(x => x.Type == "cnpj").Value;
+            string accessLevel = claims.FirstOrDefault(x => x.Type == "accessLevel").Value;
+
+            var usersByCNPJ = users.Where(x => x.Config?.cnpj == cnpj);
+
+            var usersFilteredByNoMaster = usersByCNPJ.Where(x => x.userType?.ToUpper() != "MASTER");
+
+            var usersFilteredByAccessLevel = usersFilteredByNoMaster.Where(x => x.Config?.accessLevel?.StartsWith(accessLevel) == true);
+
+            return usersFilteredByAccessLevel;
+        }
+    }
+}

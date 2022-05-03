@@ -1,0 +1,11 @@
+﻿using NotifierAppService.Models;
+
+using System.Threading.Tasks;
+
+namespace NotifierAppService.Services.Interfaces
+{
+	public interface INotificationService
+	{
+		Task<NotificationStatus> AddNotificationAsync(Notifier notifier);
+	}
+}

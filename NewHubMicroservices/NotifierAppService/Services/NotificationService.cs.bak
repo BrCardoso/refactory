@@ -1,0 +1,57 @@
+﻿using NotifierAppService.Data.RPC.Clients.Interfaces;
+using NotifierAppService.Hubs;
+using NotifierAppService.Models;
+using NotifierAppService.Repository.Interfaces;
+using NotifierAppService.Services.Interfaces;
+
+using Microsoft.AspNetCore.SignalR;
+
+using System;
+using System.ComponentModel;
+using System.Threading.Tasks;
+
+namespace NotifierAppService.Services
+{
+	public class NotificationService : INotificationService
+	{
+		private readonly IHubContext<NotificationHub, INotificationClient> _hubContext;
+		private readonly INotificationRepository _notificationRepository;
+
+		public NotificationService(IHubContext<NotificationHub, INotificationClient> hubContext, INotificationRepository notificationRepository)
+		{
+			_hubContext = hubContext;
+			_notificationRepository = notificationRepository;
+		}
+
+		public async Task<NotificationStatus> AddNotificationAsync(Notifier notifier)
+		{
+			if (string.IsNullOrEmpty(notifier.aggregator) || string.IsNullOrEmpty(notifier.hubguid))
+				return NotificationStatus.EmptyOrNullFields;
+
+			notifier.guid = Guid.NewGuid();
+			notifier.dateTime = DateTime.Now;
+
+			//TODO: Validar se aggregator e hubguid sao valores validos de alguma empresa
+
+			//Adiciona a notificaçao no banco
+			if (!(await _notificationRepository.AddNotificationAsync(notifier) is Notifier addedNotification))
+				return NotificationStatus.ErrorOnSave;
+
+			//Envia a notificaçao em tempo real pra quem estiver online.
+			await _hubContext.Clients.Group($"{notifier.aggregator}:{notifier.hubguid}").NewNotificationAsync(addedNotification);
+			return NotificationStatus.Success;
+		}
+	}
+
+	public enum NotificationStatus
+	{
+		[Description("Notificaçao adicionada e enviada com sucesso!")]
+		Success,
+
+		[Description("Nao foi possivel guardar a notificaçao no banco de dados!")]
+		ErrorOnSave,
+
+		[Description("É necessario informar o 'aggregator' e 'hubGuid'")]
+		EmptyOrNullFields
+	}
+}

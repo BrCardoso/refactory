@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IdentityService</name>
+    </assembly>
+    <members>
+        <member name="M:IdentityService.Controllers.AuthController.AuthAsync(IdentityService.Data.VOs.Auth.SignInVO)">
+            <summary>
+            Autentica e gera o JWT de 1h do usuario solicitado
+            </summary>
+            <param name="signIn">Email e senha para a autenticaçao</param>
+            <response code="200">Usuario autenticado com sucesso</response>
+            <response code="400">Ocorreu algum problema na solicitaçao!</response>
+            <response code="500">Ocorreu um erro interno no servidor, contacte os desenvolvedores</response>
+        </member>
+        <member name="M:IdentityService.Controllers.AuthController.ValidateTokenAsync(System.Nullable{System.Guid})">
+            <summary>
+            Determina se determinado token é valido
+            </summary>
+            <param name="accessToken">Guid de acesso do token a ser validado</param>
+            <response code="200">Token validado com sucesso!</response>
+            <response code="400">Ocorreu algum problema na solicitaçao!</response>
+            <response code="500">Ocorreu um erro interno no servidor, contacte os desenvolvedores</response>
+        </member>
+        <member name="M:IdentityService.Controllers.AuthController.RefreshTokenAsync(System.Nullable{System.Guid})">
+            <summary>
+            Atualiza determinado token
+            </summary>
+            <param name="refreshToken">Guid do refresh token que deseja exterder</param>
+            <response code="200">Token atualizado com sucesso</response>
+            <response code="400">Ocorreu algum problema na solicitaçao!</response>
+            <response code="500">Ocorreu um erro interno no servidor, contacte os desenvolvedores</response>
+        </member>
+        <member name="M:IdentityService.Controllers.UserController.CreateUserAsync(IdentityService.Data.VOs.User.CreateUserVO)">
+            <summary>
+            Cria um novo usuario
+            </summary>
+            <param name="newUserData">Json contendo os dados do usuario a ser adicionado</param>
+            <response code="201">Usuario adicionado com sucesso</response>
+            <response code="400">Ocorreu algum problema na solicitaçao!</response>
+            <response code="500">Ocorreu um erro interno no servidor, contacte os desenvolvedores</response>
+        </member>
+        <member name="M:IdentityService.Controllers.UserController.GetUserAsync(System.Nullable{System.Guid})">
+            <summary>
+            Traz as informaçoes de um usuario especifico.
+            </summary>
+            <param name="userGuid">Guid do usuario que deseja pegar as informaçoes</param>
+            <response code="200">O dados foram consultados com sucesso</response>
+            <response code="400">Ocorreu algum problema na solicitaçao!</response>
+            <response code="500">Ocorreu um erro interno no servidor, contacte os desenvolvedores</response>
+        </member>
+        <member name="M:IdentityService.Controllers.UserController.GetUsersAsync">
+            <summary>
+            Traz as informaçoes de todos os usuarios no banco.
+            </summary>
+            <response code="200">O dados foram consultados com sucesso</response>
+            <response code="400">Ocorreu algum problema na solicitaçao!</response>
+            <response code="500">Ocorreu um erro interno no servidor, contacte os desenvolvedores</response>
+        </member>
+        <member name="M:IdentityService.Controllers.UserController.BlockUserAsync(System.Nullable{System.Guid})">
+            <summary>
+            Bloqueia um usuario especifico.
+            </summary>
+            <param name="userGuid">Guid do usuario que deseja bloquear</param>
+            <response code="200">Usuario bloqueado com sucesso</response>
+            <response code="400">Ocorreu algum problema na solicitaçao!</response>
+            <response code="500">Ocorreu um erro interno no servidor, contacte os desenvolvedores</response>
+        </member>
+        <member name="M:IdentityService.Controllers.UserController.UnblockUserAsync(System.Nullable{System.Guid})">
+            <summary>
+            Desbloqueia um usuario especifico.
+            </summary>
+            <param name="userGuid">Guid do usuario que deseja desbloquear</param>
+            <response code="200">Usuario desbloqueado com sucesso</response>
+            <response code="400">Ocorreu algum problema na solicitaçao!</response>
+            <response code="500">Ocorreu um erro interno no servidor, contacte os desenvolvedores</response>
+        </member>
+        <member name="M:IdentityService.Controllers.UserController.UpdateUserAsync(IdentityService.Data.VOs.User.UpdateUserVO)">
+            <summary>
+            Atualiza qualquer informaçao do usuario.
+            </summary>
+            <param name="newUserData">Informaçoes do usuario que deseja atualizar</param>
+            <response code="200">Usuario desbloqueado com sucesso</response>
+            <response code="400">Ocorreu algum problema na solicitaçao!</response>
+            <response code="500">Ocorreu um erro interno no servidor, contacte os desenvolvedores</response>
+        </member>
+        <member name="M:IdentityService.Controllers.UserController.DeleteUserAsync(System.Nullable{System.Guid})">
+            <summary>
+            Remove um usuario do banco.
+            </summary>
+            <param name="userGuid">Guid do usuario que deseja deletar.</param>
+            <response code="204">Usuario removido com sucesso</response>
+            <response code="400">Ocorreu algum problema na solicitaçao!</response>
+            <response code="500">Ocorreu um erro interno no servidor, contacte os desenvolvedores</response>
+        </member>
+    </members>
+</doc>
